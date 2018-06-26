@@ -9,15 +9,15 @@ import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import kotlinx.android.synthetic.main.item_molde_platos.view.*
 
-class ListaPlatosAdarper (val platos :ArrayList<Plato>,val context : Context): RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHolder>(){
+class ListaPlatosAdarper : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHolder>(){
 
+     private var platos : List<Plato>? = null
 
-
-    /*fun addList(user : List<Plato>){
+    fun addList(platos : List<Plato>){
         this.platos = platos
 
         notifyDataSetChanged()
-    }*/
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlatosViewHolder {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.item_molde_platos,parent,false)
@@ -33,7 +33,7 @@ class ListaPlatosAdarper (val platos :ArrayList<Plato>,val context : Context): R
         val platos = platos!![position]
         holder.txId.text=platos.idPlato.toString()
         holder.txNombrePlato.text = platos.nombrePlato
-        holder.txPrecio.text = platos.precioPlato.toString()
+        holder.txPrecio.text = "$/"+platos.precioPlato.toString()
 
     }
 

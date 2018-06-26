@@ -8,6 +8,7 @@ import android.util.Log
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_registrar.*
 
 class HomeActivity : AppCompatActivity() {
 
@@ -16,13 +17,9 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+         platosAdapter = ListaPlatosAdarper()
 
-
-
-
-
-
-
+      ajusteToolbarHome()
 
         val listaPlatos : ArrayList<Plato> = ArrayList()
 
@@ -34,8 +31,17 @@ class HomeActivity : AppCompatActivity() {
         listaPlatos.add(Plato(1,"plaTO",12.00))
         listaPlatos.add(Plato(1,"plaTO",12.00))
 
-        my_recyclerview.layoutManager = LinearLayoutManager(this)
+        /*my_recyclerview.layoutManager = LinearLayoutManager(this)
         platosAdapter = ListaPlatosAdarper(listaPlatos,this@HomeActivity)
+        my_recyclerview.adapter = platosAdapter*/
+
+        my_recyclerview.layoutManager = LinearLayoutManager(this)
+        platosAdapter!!.addList(listaPlatos)
         my_recyclerview.adapter = platosAdapter
+    }
+
+    private fun ajusteToolbarHome() {
+        setSupportActionBar(homeToolbar)
+        title = "LISTA DE PLATOS DE HOY"
     }
 }

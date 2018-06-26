@@ -35,10 +35,7 @@ class RegistrarActivity : AppCompatActivity() {
         button_click_register.setOnClickListener {
 
 
-
-
-
-                Thread {
+            Thread {
 
                     if (edit_text_nombre.text.toString().isEmpty()) {
 
@@ -83,9 +80,4 @@ class RegistrarActivity : AppCompatActivity() {
         }
     }
 
-
-    fun validarnombre(email: String): Boolean {
-        //return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
-        return !email.isNullOrEmpty()
-    }
 }
