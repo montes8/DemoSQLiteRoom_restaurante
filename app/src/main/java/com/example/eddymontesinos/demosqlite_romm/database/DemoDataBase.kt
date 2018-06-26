@@ -8,6 +8,6 @@ import com.example.eddymontesinos.demosqlite_romm.model.Usuario
 @Database(entities = [Usuario::class],version = 1)
 abstract class DemoDataBase : RoomDatabase(){
 
-    abstract fun usuariodao() : UsuarioDao
+    abstract fun usuarioDao() : UsuarioDao
 
 }
