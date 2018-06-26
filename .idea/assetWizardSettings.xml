@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_person_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/hardware/ic_keyboard_backspace_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -33,7 +33,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_login" />
+                                      <entry key="outputName" value="ic_flecha_back" />
+                                      <entry key="theme" value="HOLO_DARK" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -49,7 +50,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="979797" />
+                                                <entry key="color" value="ffffff" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -60,7 +61,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_lock_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/hardware/ic_keyboard_backspace_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -71,7 +72,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="outputName" value="ic_password" />
+                                      <entry key="outputName" value="ic_flecha_back" />
                                     </map>
                                   </option>
                                 </PersistentState>
