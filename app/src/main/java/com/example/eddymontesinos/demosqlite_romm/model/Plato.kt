@@ -1,15 +1,7 @@
 package com.example.eddymontesinos.demosqlite_romm.model
 
-class Plato {
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 
-
-    var idPlato : Long? = null
-    var nombrePlato : String = ""
-    var precioPlato : Double? = null
-
-    constructor(idPlato: Long?, nombrePlato: String, precioPlato: Double?) {
-        this.idPlato = idPlato
-        this.nombrePlato = nombrePlato
-        this.precioPlato = precioPlato
-    }
-}
+@Entity
+data class Plato(@PrimaryKey(autoGenerate = true) var idPlato : Long? = null, val nombrePlato: String, val imagen: String, val precioPlato: Double)

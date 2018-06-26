@@ -1,5 +1,6 @@
 package com.example.eddymontesinos.demosqlite_romm.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -29,11 +30,12 @@ class ListaPlatosAdarper : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHol
         return checkedUser.size
     }
 
+
     override fun onBindViewHolder(holder: PlatosViewHolder, position: Int) {
-        val platos = platos!![position]
-        holder.txId.text=platos.idPlato.toString()
-        holder.txNombrePlato.text = platos.nombrePlato
-        holder.txPrecio.text = "$/"+platos.precioPlato.toString()
+        val plato = platos!![position]
+        holder.txId.text=plato.idPlato.toString()
+        holder.txNombrePlato.text = plato.nombrePlato
+        holder.txPrecio.text = "$/ ${plato.precioPlato}"
 
     }
 
