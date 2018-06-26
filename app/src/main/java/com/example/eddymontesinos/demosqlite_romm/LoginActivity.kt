@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Typeface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
@@ -11,14 +12,18 @@ import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
 import android.view.View
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.*
 
 class LoginActivity : AppCompatActivity() {
+
+    var handler : Handler = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         configurarTextoRegistrate()
+        logearse()
     }
 
     fun configurarTextoRegistrate(){
@@ -40,4 +45,29 @@ class LoginActivity : AppCompatActivity() {
         tvRegistrate.movementMethod = LinkMovementMethod.getInstance()
 
     }
+
+
+    fun logearse(){
+        button_login.setOnClickListener {
+
+            Thread{
+                val usuario= DemoApplication.database?.usuarioDao()?.userLogin(edit_nombre_login.text.toString(),edit_password_login.text.toString())
+
+                if (usuario!=null){
+                    handler.post {
+                        //defaultSharedPreferences.edit().putString("idUsuarioLogeado",usuario?.idUsu.toString()).apply()
+                        toast("Bienvenida (o) ${usuario?.nombreUsuario}")
+                        startActivity(intentFor<HomeActivity>().newTask().clearTask())
+                    }
+                }else {
+                    handler.post {
+                        toast("Usuario o Contraseña Incorrectos")
+                    }
+                }
+            }.start()
+
+        }
+
+    }
+
 }
