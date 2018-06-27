@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".views.RegistrarActivity" />
-        <activity android:name=".views.HomeActivity"></activity>
+        <activity android:name=".views.HomeActivity" />
+        <activity android:name=".views.DetallePlatoActivity"></activity>
     </application>
 
 </manifest>

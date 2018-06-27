@@ -1,6 +1,5 @@
 package com.example.eddymontesinos.demosqlite_romm.adapter
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -11,7 +10,7 @@ import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
 import kotlinx.android.synthetic.main.item_molde_platos.view.*
 
-class ListaPlatosAdarper(val contexto: Context) : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHolder>(){
+class ListaPlatosAdarper(val contexto: Context,var onDetalleClick: ((Plato) -> Unit)? = null ) : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHolder>(){
 
      private var platos : List<Plato>? = null
 
@@ -39,12 +38,17 @@ class ListaPlatosAdarper(val contexto: Context) : RecyclerView.Adapter<ListaPlat
         holder.imagePlato.setImageDrawable(DemoUtils.getImage(contexto, plato.imagen))
         holder.txPrecio.text = "$/ ${plato.precioPlato}"
 
+        holder.nextflecha.setOnClickListener{
+            onDetalleClick?.invoke(plato)
+        }
+
     }
 
     class PlatosViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
        val imagePlato = itemView.image_view_plato
-        val txNombrePlato = itemView.text_nombre_plato
+        val txNombrePlato = itemView.text_nombre_pletoitem
         val txPrecio = itemView.text_precio
+        val nextflecha = itemView.image_detalles
 
     }
 }

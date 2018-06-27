@@ -1,5 +1,6 @@
 package com.example.eddymontesinos.demosqlite_romm.views
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -20,18 +21,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        platosAdapter = ListaPlatosAdarper(this)
-        my_recyclerview.layoutManager = LinearLayoutManager(this)
-        my_recyclerview.adapter = platosAdapter
-
-      ajusteToolbarHome()
-
-      Thread {
-          val lista = DemoApplication.database!!.platoDao().litarPlatos()
-          handler.post {
-              platosAdapter!!.addList(lista)
-          }
-      }.start()
+      cargarRecycler()
 
 
     }
@@ -39,6 +29,28 @@ class HomeActivity : AppCompatActivity() {
     private fun ajusteToolbarHome() {
         setSupportActionBar(homeToolbar)
         title = "LISTA DE PLATOS DE HOY"
+    }
+
+    private fun cargarRecycler(){
+
+        platosAdapter = ListaPlatosAdarper(this)
+
+        platosAdapter?.onDetalleClick ={
+            val intent = Intent(this@HomeActivity,DetallePlatoActivity::class.java)
+            intent.putExtra(DetallePlatoActivity.PLATO_PARAM, it)
+            startActivity(intent)
+        }
+        my_recyclerview.layoutManager = LinearLayoutManager(this)
+        my_recyclerview.adapter = platosAdapter
+
+        ajusteToolbarHome()
+
+        Thread {
+            val lista = DemoApplication.database!!.platoDao().litarPlatos()
+            handler.post {
+                platosAdapter!!.addList(lista)
+            }
+        }.start()
     }
 
 }
