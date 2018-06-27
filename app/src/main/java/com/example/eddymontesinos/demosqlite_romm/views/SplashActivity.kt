@@ -1,10 +1,11 @@
-package com.example.eddymontesinos.demosqlite_romm
+package com.example.eddymontesinos.demosqlite_romm.views
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import com.example.eddymontesinos.demosqlite_romm.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
 
 
         anima = AnimationUtils.loadAnimation(this, R.anim.animacion)
-        anima2 = AnimationUtils.loadAnimation(this,R.anim.animacion_botton)
+        anima2 = AnimationUtils.loadAnimation(this, R.anim.animacion_botton)
         once.animation=anima
         doce.animation=anima2
 

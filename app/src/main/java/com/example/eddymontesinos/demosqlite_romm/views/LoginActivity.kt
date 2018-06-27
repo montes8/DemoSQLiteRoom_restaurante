@@ -1,4 +1,4 @@
-package com.example.eddymontesinos.demosqlite_romm
+package com.example.eddymontesinos.demosqlite_romm.views
 
 import android.content.Intent
 import android.graphics.Typeface
@@ -11,6 +11,8 @@ import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
 import android.view.View
+import com.example.eddymontesinos.demosqlite_romm.DemoApplication
+import com.example.eddymontesinos.demosqlite_romm.R
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.*
 
@@ -34,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
         val clickableSpan = object: ClickableSpan() {
 
             override fun onClick(widget: View?) {
-                val intent = Intent(this@LoginActivity,RegistrarActivity::class.java)
+                val intent = Intent(this@LoginActivity, RegistrarActivity::class.java)
                 startActivity(intent)
             }
         }

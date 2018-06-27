@@ -1,10 +1,11 @@
-package com.example.eddymontesinos.demosqlite_romm
+package com.example.eddymontesinos.demosqlite_romm.views
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import android.util.Patterns
+import com.example.eddymontesinos.demosqlite_romm.DemoApplication
+import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.model.Usuario
 import kotlinx.android.synthetic.main.activity_registrar.*
 import org.jetbrains.anko.*

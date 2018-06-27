@@ -8,9 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.model.Plato
+import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
 import kotlinx.android.synthetic.main.item_molde_platos.view.*
 
-class ListaPlatosAdarper : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHolder>(){
+class ListaPlatosAdarper(val contexto: Context) : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHolder>(){
 
      private var platos : List<Plato>? = null
 
@@ -33,14 +34,15 @@ class ListaPlatosAdarper : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHol
 
     override fun onBindViewHolder(holder: PlatosViewHolder, position: Int) {
         val plato = platos!![position]
-        holder.txId.text=plato.idPlato.toString()
+
         holder.txNombrePlato.text = plato.nombrePlato
+        holder.imagePlato.setImageDrawable(DemoUtils.getImage(contexto, plato.imagen))
         holder.txPrecio.text = "$/ ${plato.precioPlato}"
 
     }
 
     class PlatosViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
-        val txId = itemView.text_id
+       val imagePlato = itemView.image_view_plato
         val txNombrePlato = itemView.text_nombre_plato
         val txPrecio = itemView.text_precio
 

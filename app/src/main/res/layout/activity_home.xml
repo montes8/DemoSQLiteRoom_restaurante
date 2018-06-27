@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#bbbbbb"
-    tools:context=".HomeActivity">
+    android:orientation="vertical"
+    tools:context=".views.HomeActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/homeToolbar"
@@ -24,13 +26,11 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="447dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homeToolbar"
-        app:layout_constraintVertical_bias="0.0"
         tools:itemCount="5"
         tools:listitem="@layout/item_molde_platos" />
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

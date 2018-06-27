@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:layout_editor_absoluteY="25dp"
-    tools:context=".RegistrarActivity">
+    tools:context=".views.RegistrarActivity">
 
 
     <android.support.v7.widget.Toolbar
