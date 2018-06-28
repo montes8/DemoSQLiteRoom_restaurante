@@ -10,6 +10,7 @@ import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import com.example.eddymontesinos.demosqlite_romm.model.DetallePedido
+import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 import com.example.eddymontesinos.demosqlite_romm.model.Pedido
 import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.defaultSharedPreferences
@@ -18,7 +19,7 @@ import org.jetbrains.anko.defaultSharedPreferences
 class HomeActivity : AppCompatActivity() {
 
     var platosAdapter : ListaPlatosAdarper? = null
-    val idUsu = defaultSharedPreferences.getLong("idUsuarioLogeado",0)
+    //val idUsu = defaultSharedPreferences.getLong("idUsuarioLogeado",0)
     var handler :Handler = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,14 +48,18 @@ class HomeActivity : AppCompatActivity() {
 
         platosAdapter?.onAddClick ={
 
-            val pedidos = ArrayList<DetallePedido>()
+            val pedidos = ArrayList<DetalleTemporal>()
             val idplato =it.idPlato
             val cantidad = 1
             val subTotal = it.precioPlato
+            pedidos.add(DetalleTemporal(idplato,cantidad,subTotal))
+            pedidos.forEach {
 
-            pedidos.add(DetallePedido(null,null,idplato,cantidad,subTotal))
+                Log.d("idDePlato","${it.idDePlato}")
+                Log.d("cantidadPlato","${it.cantidadPlato}")
+                Log.d("precioDePlato","${it.precioDePlato}")
+            }
 
-            Log.d("listaas detalles","$pedidos")
         }
 
 
