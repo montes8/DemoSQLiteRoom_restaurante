@@ -2,7 +2,7 @@ package com.example.eddymontesinos.demosqlite_romm.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
-import android.content.Context
+import com.example.eddymontesinos.demosqlite_romm.database.dao.DetallePedidoDao
 import com.example.eddymontesinos.demosqlite_romm.database.dao.PedidoDao
 import com.example.eddymontesinos.demosqlite_romm.database.dao.PlatoDao
 import com.example.eddymontesinos.demosqlite_romm.database.dao.UsuarioDao
@@ -17,7 +17,7 @@ abstract class DemoDataBase : RoomDatabase(){
     abstract fun usuarioDao() : UsuarioDao
     abstract fun platoDao() : PlatoDao
     abstract fun pedidoDao() : PedidoDao
-    abstract fun detallePedidoDao() : DetallePedido
+    abstract fun detallePedidoDao() : DetallePedidoDao
 /*
     companion object {
 

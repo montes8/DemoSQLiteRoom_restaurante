@@ -10,7 +10,7 @@ import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
 import kotlinx.android.synthetic.main.item_molde_platos.view.*
 
-class ListaPlatosAdarper(val contexto: Context,var onDetalleClick: ((Plato) -> Unit)? = null ) : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHolder>(){
+class ListaPlatosAdarper(val contexto: Context,var onDetalleClick: ((Plato) -> Unit)? = null ,var onAddClick: ((Plato) -> Unit)? = null) : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHolder>(){
 
      private var platos : List<Plato>? = null
 
@@ -37,9 +37,11 @@ class ListaPlatosAdarper(val contexto: Context,var onDetalleClick: ((Plato) -> U
         holder.txNombrePlato.text = plato.nombrePlato
         holder.imagePlato.setImageDrawable(DemoUtils.getImage(contexto, plato.imagen))
         holder.txPrecio.text = "$/ ${plato.precioPlato}"
-
         holder.nextflecha.setOnClickListener{
             onDetalleClick?.invoke(plato)
+        }
+        holder.addClick.setOnClickListener{
+            onAddClick?.invoke(plato)
         }
 
     }
@@ -49,6 +51,7 @@ class ListaPlatosAdarper(val contexto: Context,var onDetalleClick: ((Plato) -> U
         val txNombrePlato = itemView.text_nombre_pletoitem
         val txPrecio = itemView.text_precio
         val nextflecha = itemView.image_detalles
+        val addClick = itemView.image_add
 
     }
 }

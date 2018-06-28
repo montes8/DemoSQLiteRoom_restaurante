@@ -6,8 +6,7 @@ import android.arch.persistence.room.PrimaryKey
 
 
 
-@Entity(foreignKeys = [ (ForeignKey(entity = Pedido::class, parentColumns = arrayOf("idPedido"), childColumns = arrayOf("pedidoId"), onDelete = ForeignKey.CASCADE)),
-                         (ForeignKey(entity = Plato::class,parentColumns = arrayOf("idPlato"),childColumns = arrayOf("platoId"),onDelete = ForeignKey.CASCADE))])
+@Entity(foreignKeys = [ ForeignKey(entity = Pedido::class, parentColumns = arrayOf("idPedido"), childColumns = arrayOf("pedidoId"), onDelete = ForeignKey.CASCADE)])
 class DetallePedido (
         @PrimaryKey(autoGenerate = true)
         var idDetalle : Long? = null,

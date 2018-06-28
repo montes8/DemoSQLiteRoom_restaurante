@@ -13,7 +13,7 @@ interface UsuarioDao {
     fun userLogin(name:String,pass:String):Usuario
 
     @Query("select * from Usuario where idUsu = :id")
-    fun verDetalleUsuarioLogeado(id : String ): Usuario
+    fun verDetalleUsuarioLogeado(id : Long ): Usuario
 
 
     @Insert
