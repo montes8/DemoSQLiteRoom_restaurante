@@ -6,16 +6,18 @@ import android.content.Context
 import com.example.eddymontesinos.demosqlite_romm.database.dao.PedidoDao
 import com.example.eddymontesinos.demosqlite_romm.database.dao.PlatoDao
 import com.example.eddymontesinos.demosqlite_romm.database.dao.UsuarioDao
+import com.example.eddymontesinos.demosqlite_romm.model.DetallePedido
 import com.example.eddymontesinos.demosqlite_romm.model.Pedido
 import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.model.Usuario
 
-@Database(entities = [Usuario::class,Plato::class,Pedido::class],version = 1)
+@Database(entities = [Usuario::class,Plato::class,Pedido::class,DetallePedido::class],version = 1)
 abstract class DemoDataBase : RoomDatabase(){
 
     abstract fun usuarioDao() : UsuarioDao
     abstract fun platoDao() : PlatoDao
     abstract fun pedidoDao() : PedidoDao
+    abstract fun detallePedidoDao() : DetallePedido
 /*
     companion object {
 
