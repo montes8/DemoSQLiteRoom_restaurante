@@ -4,7 +4,7 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
 @Entity
-class Usuario (
+data class Usuario (
 
         @PrimaryKey(autoGenerate = true)
         var idUsu : Long? = null,

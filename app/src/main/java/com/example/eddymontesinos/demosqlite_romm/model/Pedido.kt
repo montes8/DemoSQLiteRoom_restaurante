@@ -6,13 +6,11 @@ import android.arch.persistence.room.PrimaryKey
 
 
 @Entity(foreignKeys = [ (ForeignKey(entity = Usuario::class, parentColumns = arrayOf("idUsu"), childColumns = arrayOf("userId"), onDelete = ForeignKey.CASCADE))])
-class Pedido (
+data class Pedido (
 @PrimaryKey(autoGenerate = true)
 var idPedido : Long? = null,
 
 var userId : Long? = null,
-
-var platoPedido : String = "" ,
 
 var fecha: String? = "",
 
