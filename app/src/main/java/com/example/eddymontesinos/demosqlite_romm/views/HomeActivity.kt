@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
@@ -13,7 +15,10 @@ import com.example.eddymontesinos.demosqlite_romm.model.DetallePedido
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 import com.example.eddymontesinos.demosqlite_romm.model.Pedido
 import kotlinx.android.synthetic.main.activity_home.*
+import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.defaultSharedPreferences
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.newTask
 
 
 class HomeActivity : AppCompatActivity() {
@@ -76,6 +81,26 @@ class HomeActivity : AppCompatActivity() {
                 platosAdapter!!.addList(lista)
             }
         }.start()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.menu_orden ->{
+                val intent = Intent(this@HomeActivity,DetallePedidoActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.salir ->{
+                startActivity(intentFor<LoginActivity>().newTask().clearTask())
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
     }
 
 }

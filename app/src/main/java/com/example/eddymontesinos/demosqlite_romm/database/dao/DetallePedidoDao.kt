@@ -10,7 +10,7 @@ import com.example.eddymontesinos.demosqlite_romm.model.Pedido
 @Dao
 interface DetallePedidoDao {
 
-    @Query("select * from DetallePedido")
+    @Query("select * from DetallePedidoActivity")
     fun litarDetallePedido(): List<DetallePedido>
 
     @Insert
