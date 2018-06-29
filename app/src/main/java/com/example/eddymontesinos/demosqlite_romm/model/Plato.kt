@@ -9,7 +9,7 @@ import kotlinx.android.parcel.Parcelize
 @Entity
 data class Plato(
         @PrimaryKey(autoGenerate = true)
-        var idPlato : Long? = null,
+        var idPlato : Long? =null,
         val nombrePlato: String,
         val imagen: String,
         val precioPlato: Double,

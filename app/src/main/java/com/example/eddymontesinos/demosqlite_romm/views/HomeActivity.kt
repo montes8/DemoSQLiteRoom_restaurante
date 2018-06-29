@@ -11,9 +11,7 @@ import android.view.MenuItem
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
-import com.example.eddymontesinos.demosqlite_romm.model.DetallePedido
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
-import com.example.eddymontesinos.demosqlite_romm.model.Pedido
 import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.defaultSharedPreferences
@@ -24,6 +22,8 @@ import org.jetbrains.anko.newTask
 class HomeActivity : AppCompatActivity() {
 
     var platosAdapter : ListaPlatosAdarper? = null
+
+    var pedidos : ArrayList<DetalleTemporal> = ArrayList<DetalleTemporal>()
     //val idUsu = defaultSharedPreferences.getLong("idUsuarioLogeado",0)
     var handler :Handler = Handler()
 
@@ -53,17 +53,21 @@ class HomeActivity : AppCompatActivity() {
 
         platosAdapter?.onAddClick ={
 
-            val pedidos = ArrayList<DetalleTemporal>()
             val idplato =it.idPlato
             val cantidad = 1
-            val subTotal = it.precioPlato
-            pedidos.add(DetalleTemporal(idplato,cantidad,subTotal))
+            val precio = it.precioPlato
+            var subTotal = 0.0
+            pedidos.add(DetalleTemporal(idplato,cantidad,precio))
             pedidos.forEach {
-
+                subTotal=subTotal+ it.precioDePlato!!
                 Log.d("idDePlato","${it.idDePlato}")
                 Log.d("cantidadPlato","${it.cantidadPlato}")
                 Log.d("precioDePlato","${it.precioDePlato}")
             }
+
+            val totalsub = subTotal
+            Log.d("totalpagar",""+totalsub)
+                 Log.d("tot6allistas",""+pedidos.size)
 
         }
 
