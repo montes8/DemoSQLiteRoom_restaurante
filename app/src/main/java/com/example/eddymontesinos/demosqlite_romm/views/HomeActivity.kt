@@ -57,15 +57,19 @@ class HomeActivity : AppCompatActivity() {
             val cantidad = 1
             val precio = it.precioPlato
             var subTotal = 0.0
+            var contarplatos = 0
             pedidos.add(DetalleTemporal(idplato,cantidad,precio))
             pedidos.forEach {
                 subTotal=subTotal+ it.precioDePlato!!
+                contarplatos=contarplatos+cantidad
                 Log.d("idDePlato","${it.idDePlato}")
                 Log.d("cantidadPlato","${it.cantidadPlato}")
                 Log.d("precioDePlato","${it.precioDePlato}")
             }
 
             val totalsub = subTotal
+            val cantidades = contarplatos
+            Log.d("totalplatos",""+cantidades)
             Log.d("totalpagar",""+totalsub)
                  Log.d("tot6allistas",""+pedidos.size)
 
