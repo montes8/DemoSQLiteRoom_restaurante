@@ -1,5 +1,6 @@
 package com.example.eddymontesinos.demosqlite_romm.adapter
 
+import android.app.AlertDialog
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -10,7 +11,7 @@ import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
 import kotlinx.android.synthetic.main.item_molde_platos.view.*
 
-class ListaPlatosAdarper(val contexto: Context,var onDetalleClick: ((Plato) -> Unit)? = null ,var onAddClick: ((Plato) -> Unit)? = null) : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHolder>(){
+class ListaPlatosAdarper(val contexto: Context,var onDetalleClick: ((Plato) -> Unit)? = null ,var onAgregarOrdenClick: ((Plato) -> Unit)? = null,var onAgregarCantidadClick: ((Plato) -> Unit)? = null) : RecyclerView.Adapter<ListaPlatosAdarper.PlatosViewHolder>(){
 
      private var platos : List<Plato>? = null
 
@@ -41,12 +42,12 @@ class ListaPlatosAdarper(val contexto: Context,var onDetalleClick: ((Plato) -> U
             onDetalleClick?.invoke(plato)
         }
         holder.addClick.setOnClickListener{
-            onAddClick?.invoke(plato)
+            onAgregarOrdenClick?.invoke(plato)
         }
 
         holder.itemView.setOnClickListener{
 
-
+              onAgregarCantidadClick?.invoke(plato)
         }
 
     }

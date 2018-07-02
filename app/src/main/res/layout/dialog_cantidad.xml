@@ -3,27 +3,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/edit_cantidad_platos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginTop="185dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+    <TextView
+        android:id="@+id/nombre_plato_dialog"
+        android:layout_width="216dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.429"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_agergarorden_dialog"
-        android:layout_width="138dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:text="Button"
+    <TextView
+        android:id="@+id/precio_plato_dialog"
+        android:layout_width="95dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#FF5722"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_cantidad_platos" />
+        app:layout_constraintTop_toBottomOf="@+id/nombre_plato_dialog" />
+
+    <EditText
+        android:id="@+id/cantidad_plato_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="5"
+        android:hint="Cantidad"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/precio_plato_dialog" />
+
+    <Button
+        android:id="@+id/btnagregar_orden_dialog"
+        android:layout_width="158dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="agregar "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cantidad_plato_dialog" />
 </android.support.constraint.ConstraintLayout>

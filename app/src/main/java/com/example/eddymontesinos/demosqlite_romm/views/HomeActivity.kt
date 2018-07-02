@@ -4,8 +4,8 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
@@ -49,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        platosAdapter?.onAddClick ={
+        platosAdapter?.onAgregarOrdenClick ={
 
             val nuevaOrden = DetalleTemporal(it)
 
@@ -69,6 +69,16 @@ class HomeActivity : AppCompatActivity() {
             Log.d("totalplatos",""+cantidades)
             Log.d("totalpagar",""+totalsub)
                  Log.d("tot6allistas",""+pedidos.size)*/
+
+        }
+        platosAdapter?.onAgregarCantidadClick ={
+
+            val dialog = AlertDialog.Builder(this@HomeActivity)
+            val dialogView = layoutInflater.inflate(R.layout.dialog_cantidad,null)
+            dialog.setView(dialogView)
+            dialog.setCancelable(false)
+            dialog.show()
+
 
         }
 
