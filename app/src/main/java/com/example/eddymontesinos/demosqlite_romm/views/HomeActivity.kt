@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.EditText
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
@@ -19,6 +20,7 @@ import kotlinx.android.synthetic.main.dialog_cantidad.view.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.newTask
+import org.jetbrains.anko.toast
 
 
 class HomeActivity : AppCompatActivity() {
@@ -73,19 +75,31 @@ class HomeActivity : AppCompatActivity() {
                  Log.d("tot6allistas",""+pedidos.size)*/
 
         }
-        platosAdapter?.onAgregarCantidadClick ={
+        platosAdapter?.onAgregarCantidadClick ={plato ->
 
-            val dialog = AlertDialog.Builder(this@HomeActivity)
+            val dialogBuilder = AlertDialog.Builder(this@HomeActivity)
             val dialogView = layoutInflater.inflate(R.layout.dialog_cantidad,null)
 
-            //view.nombre_plato_dialog.text = it.nombrePlato
-            //val nuevaOrden = DetalleTemporal(it,cantidad.text.toString().toInt())
-            dialogView.nombre_plato_dialog.text = it.nombrePlato
-            dialogView.precio_plato_dialog.text = it.precioPlato.toString()
-            dialog.setView(dialogView)
-            dialog.setCancelable(true)
-            dialog.show()
+            dialogBuilder.setView(dialogView)
+            dialogBuilder.setCancelable(true)
 
+            dialogView.nombre_plato_dialog.text = plato.nombrePlato
+            dialogView.precio_plato_dialog.text = plato.precioPlato.toString()
+
+            val dialog = dialogBuilder.create()
+            dialogView.btnagregar_orden_dialog.setOnClickListener{
+
+                if(!dialogView.cantidad_plato_dialog.text.toString().isEmpty()){
+                    val nuevaOrdend = DetalleTemporal(plato,dialogView.cantidad_plato_dialog.text.toString().toInt())
+                    OrdenTemporal.agregarItemOrden(nuevaOrdend)
+                    dialog.dismiss()
+                }else{
+                    toast("Ingrese Cantidad")
+                }
+            }
+
+
+            dialog.show()
 
         }
 
