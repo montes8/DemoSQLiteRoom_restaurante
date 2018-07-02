@@ -14,7 +14,6 @@ import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.clearTask
-import org.jetbrains.anko.defaultSharedPreferences
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.newTask
 

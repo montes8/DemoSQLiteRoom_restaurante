@@ -4,50 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".views.DetallePedidoActivity">
 
-    <TextView
-        android:id="@+id/textiddetalletemporal"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="47dp"
-        android:layout_marginTop="110dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textidplatodtemporal"
-        app:layout_constraintEnd_toEndOf="@+id/textidplatodtemporal"
-        app:layout_constraintStart_toStartOf="@+id/textidplatodtemporal"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textidplatodtemporal"
-        android:layout_width="138dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="47dp"
-        android:layout_marginEnd="52dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textcantidadt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textiddetalletemporal" />
-
-    <TextView
-        android:id="@+id/textcantidadt"
-        android:layout_width="129dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="57dp"
-        android:layout_marginEnd="61dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textprecioplstot"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textidplatodtemporal" />
-
-    <TextView
-        android:id="@+id/textprecioplstot"
-        android:layout_width="125dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="85dp"
-        android:layout_marginEnd="65dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textcantidadt" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/pedidoToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF5722"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:titleTextColor="#FFFFFF" />
 </android.support.constraint.ConstraintLayout>
