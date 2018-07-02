@@ -1,55 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_style"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        >
-        <TextView
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/image_view_plato_detalle"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="2"
+            android:scaleType="fitXY"
+            android:src="@drawable/huancaina" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:paddingLeft="12dp">
+
+
+            <TextView
                 android:id="@+id/text_id_platodetalle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-            android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:hint="id"
-               />
-
+                android:hint="plato"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/text_cantidad_platos"
+                android:id="@+id/text_precio_unitario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="cantidad"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                 />
+                android:layout_marginTop="10dp"
+                android:text="precio" />
 
-
-            <TextView
-                android:id="@+id/text_precio_subtotal"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:hint="subtotal a pagar"
-                android:textColor="#FF5722"
-            />
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Cantidad:"
+                    android:textSize="10sp" />
 
+                <TextView
+                    android:id="@+id/text_cantidad_platos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:hint="catidad"
+                    android:textColor="#FF5722"
+                    android:textSize="10sp" />
+                <TextView
 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="SunTotal"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/text_subtotal_detalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="precio"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#FF5722"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/image_delete_pedido"
+                android:id="@+id/image_eliminar"
                 android:layout_width="35dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/ic_delete_pedido" />
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_remove" />
+
+        </LinearLayout>
 
     </LinearLayout>
+
 
 </LinearLayout>
