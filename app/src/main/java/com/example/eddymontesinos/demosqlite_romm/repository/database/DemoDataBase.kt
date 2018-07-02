@@ -1,11 +1,11 @@
-package com.example.eddymontesinos.demosqlite_romm.database
+package com.example.eddymontesinos.demosqlite_romm.repository.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
-import com.example.eddymontesinos.demosqlite_romm.database.dao.DetallePedidoDao
-import com.example.eddymontesinos.demosqlite_romm.database.dao.PedidoDao
-import com.example.eddymontesinos.demosqlite_romm.database.dao.PlatoDao
-import com.example.eddymontesinos.demosqlite_romm.database.dao.UsuarioDao
+import com.example.eddymontesinos.demosqlite_romm.repository.database.dao.DetallePedidoDao
+import com.example.eddymontesinos.demosqlite_romm.repository.database.dao.PedidoDao
+import com.example.eddymontesinos.demosqlite_romm.repository.database.dao.PlatoDao
+import com.example.eddymontesinos.demosqlite_romm.repository.database.dao.UsuarioDao
 import com.example.eddymontesinos.demosqlite_romm.model.DetallePedido
 import com.example.eddymontesinos.demosqlite_romm.model.Pedido
 import com.example.eddymontesinos.demosqlite_romm.model.Plato

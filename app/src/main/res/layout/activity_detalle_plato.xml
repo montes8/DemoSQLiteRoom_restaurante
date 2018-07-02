@@ -52,10 +52,10 @@
 
     <TextView
         android:id="@+id/text_descripcion"
-        android:layout_width="260dp"
-        android:layout_height="32dp"
+        android:layout_width="250dp"
+        android:layout_height="37dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:text="descripcion ...aaa"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,13 +106,13 @@
         android:id="@+id/text_nombre_plato"
         android:layout_width="182dp"
         android:layout_height="27dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
         android:text="Informacion de Plato"
         android:textColor="#ff5f47"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/image_plato" />
 
     <View
         android:id="@+id/view"
@@ -129,14 +129,13 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_plato"
         android:layout_width="match_parent"
-        android:layout_height="176dp"
+        android:layout_height="183dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/detalleToolbar"
         app:srcCompat="@drawable/ceviche" />
 
 </android.support.constraint.ConstraintLayout>

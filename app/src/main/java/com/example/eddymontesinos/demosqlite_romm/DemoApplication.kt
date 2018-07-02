@@ -1,13 +1,9 @@
 package com.example.eddymontesinos.demosqlite_romm
 
 import android.app.Application
-import android.arch.persistence.db.SupportSQLiteDatabase
 import android.arch.persistence.room.Room
-import android.arch.persistence.room.RoomDatabase
-import android.util.Log
-import com.example.eddymontesinos.demosqlite_romm.database.DemoDataBase
-import com.example.eddymontesinos.demosqlite_romm.database.PoblarBaseDatosCallback
-import com.example.eddymontesinos.demosqlite_romm.model.Plato
+import com.example.eddymontesinos.demosqlite_romm.repository.database.DemoDataBase
+import com.example.eddymontesinos.demosqlite_romm.repository.database.PoblarBaseDatosCallback
 
 class DemoApplication : Application() {
 

@@ -1,4 +1,4 @@
-package com.example.eddymontesinos.demosqlite_romm.database
+package com.example.eddymontesinos.demosqlite_romm.repository.database
 
 import android.arch.persistence.db.SupportSQLiteDatabase
 import android.arch.persistence.room.RoomDatabase

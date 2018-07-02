@@ -1,4 +1,4 @@
-package com.example.eddymontesinos.demosqlite_romm.database.dao
+package com.example.eddymontesinos.demosqlite_romm.repository.database.dao
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Delete
@@ -15,10 +15,10 @@ interface DetallePedidoDao {
     fun litarDetallePedido(): List<DetallePedido>
 
     @Query("select * from Pedido inner join  DetallePedido on Pedido.idPedido = DetallePedido.pedidoId where DetallePedido.pedidoId= :pedidoId")
-    fun getUsersForRepository(pedidoId: Long): List<Pedido>
+    fun detalleDePedido(pedidoId: Long): List<Pedido>
 
     @Query("select * from Plato inner join  DetallePedido on Plato.idPlato = DetallePedido.platoId where DetallePedido.platoId= :platoId")
-    fun getRepositoriesForUsers(platoId : Long):List<Plato>
+    fun detallesDePlato(platoId : Long):List<Plato>
 
     @Insert
     fun insertarDetallesListaPedido(detalle : ArrayList<DetallePedido>) : Array<Long>

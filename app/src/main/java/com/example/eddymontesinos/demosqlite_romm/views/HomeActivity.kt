@@ -12,6 +12,7 @@ import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
+import com.example.eddymontesinos.demosqlite_romm.repository.temporal.OrdenTemporal
 import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.intentFor
@@ -22,8 +23,6 @@ class HomeActivity : AppCompatActivity() {
 
     var platosAdapter : ListaPlatosAdarper? = null
 
-    var pedidos : ArrayList<DetalleTemporal> = ArrayList<DetalleTemporal>()
-    //val idUsu = defaultSharedPreferences.getLong("idUsuarioLogeado",0)
     var handler :Handler = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,12 +51,11 @@ class HomeActivity : AppCompatActivity() {
 
         platosAdapter?.onAddClick ={
 
-            val idplato =it.idPlato
-            val cantidad = 1
-            val precio = it.precioPlato
-            var subTotal = 0.0
-            var contarplatos = 0
-            pedidos.add(DetalleTemporal(idplato,cantidad,precio))
+            val nuevaOrden = DetalleTemporal(it)
+
+            OrdenTemporal.agregarItemOrden(nuevaOrden)
+
+            /*
             pedidos.forEach {
                 subTotal=subTotal+ it.precioDePlato!!
                 contarplatos=contarplatos+cantidad
@@ -70,12 +68,9 @@ class HomeActivity : AppCompatActivity() {
             val cantidades = contarplatos
             Log.d("totalplatos",""+cantidades)
             Log.d("totalpagar",""+totalsub)
-                 Log.d("tot6allistas",""+pedidos.size)
+                 Log.d("tot6allistas",""+pedidos.size)*/
 
         }
-
-
-
 
         my_recyclerview.layoutManager = LinearLayoutManager(this)
         my_recyclerview.adapter = platosAdapter
