@@ -83,6 +83,7 @@ class HomeActivity : AppCompatActivity() {
                 platosAdapter!!.addList(lista)
             }
         }.start()
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

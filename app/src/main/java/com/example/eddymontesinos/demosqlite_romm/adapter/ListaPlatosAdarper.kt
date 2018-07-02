@@ -44,6 +44,11 @@ class ListaPlatosAdarper(val contexto: Context,var onDetalleClick: ((Plato) -> U
             onAddClick?.invoke(plato)
         }
 
+        holder.itemView.setOnClickListener{
+
+
+        }
+
     }
 
     class PlatosViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
