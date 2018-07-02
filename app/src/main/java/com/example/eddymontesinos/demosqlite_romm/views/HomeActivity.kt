@@ -13,7 +13,9 @@ import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 import com.example.eddymontesinos.demosqlite_romm.repository.temporal.OrdenTemporal
+import kotlinx.android.synthetic.main.activity_detalle_plato.*
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.dialog_cantidad.view.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.newTask
@@ -75,8 +77,13 @@ class HomeActivity : AppCompatActivity() {
 
             val dialog = AlertDialog.Builder(this@HomeActivity)
             val dialogView = layoutInflater.inflate(R.layout.dialog_cantidad,null)
+
+            //view.nombre_plato_dialog.text = it.nombrePlato
+            //val nuevaOrden = DetalleTemporal(it,cantidad.text.toString().toInt())
+            dialogView.nombre_plato_dialog.text = it.nombrePlato
+            dialogView.precio_plato_dialog.text = it.precioPlato.toString()
             dialog.setView(dialogView)
-            dialog.setCancelable(false)
+            dialog.setCancelable(true)
             dialog.show()
 
 
