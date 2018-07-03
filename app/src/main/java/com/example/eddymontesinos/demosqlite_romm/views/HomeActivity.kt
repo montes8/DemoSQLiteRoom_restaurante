@@ -126,6 +126,11 @@ class HomeActivity : AppCompatActivity() {
                 startActivity(intents)
 
             }
+            R.id.historial ->{
+
+
+
+            }
             R.id.salir ->{
                 startActivity(intentFor<LoginActivity>().newTask().clearTask())
             }

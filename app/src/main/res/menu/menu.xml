@@ -6,6 +6,9 @@
         android:title="Configuracion"
         android:icon="@drawable/ic_orden"
         app:showAsAction="always"/>
+    <item android:id="@+id/historial"
+        android:title="Historial"
+        app:showAsAction="never"/>
 
     <item android:id="@+id/salir"
         android:title="Salir"
