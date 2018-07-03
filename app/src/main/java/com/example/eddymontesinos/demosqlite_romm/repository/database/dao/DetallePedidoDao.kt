@@ -15,7 +15,7 @@ interface DetallePedidoDao {
     fun litarDetallePedido(): List<DetallePedido>
 
     @Query("select * from DetallePedido inner join  Pedido on  DetallePedido.pedidoId=Pedido.idPedido where DetallePedido.pedidoId= :pedidoId")
-    fun detalleDePedido(pedidoId: Long): List<Pedido>
+    fun detalleDePedido(pedidoId: Long): Pedido
 
     @Query("select * from DetallePedido inner join  Plato on DetallePedido.platoId=Plato.idPlato  where DetallePedido.platoId= :platoId")
     fun detallesDePlato(platoId : Long):Plato

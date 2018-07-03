@@ -5,21 +5,18 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
-import com.example.eddymontesinos.demosqlite_romm.adapter.HistorialAdarper
-import com.example.eddymontesinos.demosqlite_romm.model.DetallePedido
-import kotlinx.android.synthetic.main.activity_detalle_plato.*
-import kotlinx.android.synthetic.main.activity_historial.*
+import com.example.eddymontesinos.demosqlite_romm.adapter.HistorialPedidoAdarper
+import kotlinx.android.synthetic.main.activity_historial_pedido.*
 
-class HistorialActivity : AppCompatActivity() {
-    var historialAdapter : HistorialAdarper? = null
+class HistorialPedidoActivity : AppCompatActivity() {
+    var historialAdapter : HistorialPedidoAdarper? = null
 
     var handler : Handler = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_historial)
+        setContentView(R.layout.activity_historial_pedido)
 
        ajustarToolbarHistorial()
        recyclerView()
@@ -31,7 +28,7 @@ class HistorialActivity : AppCompatActivity() {
     fun ajustarToolbarHistorial(){
 
         setSupportActionBar(historialToolbar)
-        title = "Historial"
+        title = "Historial de pedido"
         historialToolbar.navigationIcon = getDrawable(R.drawable.ic_atras)
         historialToolbar.setNavigationOnClickListener {
             onBackPressed()
@@ -40,7 +37,7 @@ class HistorialActivity : AppCompatActivity() {
 
     fun recyclerView(){
 
-        historialAdapter = HistorialAdarper(this)
+        historialAdapter = HistorialPedidoAdarper(this)
 
         historial_recyclerview.layoutManager = LinearLayoutManager(this)
         historial_recyclerview.adapter = historialAdapter

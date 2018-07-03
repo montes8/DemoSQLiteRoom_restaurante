@@ -25,10 +25,13 @@
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="3"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:paddingLeft="12dp">
 
-
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/nombre_plato_historial"
                     android:layout_width="wrap_content"
@@ -42,6 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:textColor="#FF5722"
                     android:layout_marginTop="10dp"
                     android:text="precio" />
 
@@ -86,7 +90,14 @@
                         android:textColor="#FF5722"
                         android:textSize="10sp" />
                 </LinearLayout>
-
+             </LinearLayout>
+                <TextView
+                    android:id="@+id/fecha_pedido_historial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fecha"
+                    android:ems="5"
+                    />
             </LinearLayout>
 
 

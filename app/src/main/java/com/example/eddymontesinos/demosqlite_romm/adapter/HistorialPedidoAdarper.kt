@@ -12,7 +12,7 @@ import com.example.eddymontesinos.demosqlite_romm.model.DetallePedido
 import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
 import kotlinx.android.synthetic.main.molde_historial_pedido.view.*
 
-class HistorialAdarper(val contexto: Context) : RecyclerView.Adapter<HistorialAdarper.HistorialViewHolder>(){
+class HistorialPedidoAdarper(val contexto: Context) : RecyclerView.Adapter<HistorialPedidoAdarper.HistorialViewHolder>(){
 
     private var historialpedidos : List<DetallePedido>? = null
     val handler = Handler()
@@ -39,13 +39,17 @@ class HistorialAdarper(val contexto: Context) : RecyclerView.Adapter<HistorialAd
 
         Thread {
             val plato = DemoApplication.database!!.detallePedidoDao().detallesDePlato(pedidoHistorial.platoId!!.toLong())
+            val pedido = DemoApplication.database!!.detallePedidoDao().detalleDePedido(pedidoHistorial.pedidoId!!.toLong())
 
             handler.post {
                 holder.txNombrePlato.text = plato.nombrePlato
                 holder.txPrecio.text = plato.precioPlato.toString()
                 holder.imagePlato.setImageDrawable(DemoUtils.getImage(contexto, plato.imagen))
+                holder.fechaPedido.text = pedido.fecha
             }
         }.start()
+
+
 
         holder.cantidadPlatos.text = pedidoHistorial.cantidad.toString()
         holder.subtotalPagar.text = pedidoHistorial.subTotal.toString()
@@ -60,6 +64,7 @@ class HistorialAdarper(val contexto: Context) : RecyclerView.Adapter<HistorialAd
         val txPrecio = itemView.precio_plato_historial
         val cantidadPlatos = itemView.cantidad_platos_historial
         val subtotalPagar = itemView.subtotal_pagar_historial
+        val fechaPedido = itemView.fecha_pedido_historial
 
     }
 }

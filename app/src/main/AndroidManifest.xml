@@ -22,7 +22,8 @@
         <activity android:name=".views.HomeActivity" />
         <activity android:name=".views.DetallePlatoActivity" />
         <activity android:name=".views.DetallePedidoActivity" />
-        <activity android:name=".views.HistorialActivity"></activity>
+        <activity android:name=".views.HistorialPedidoActivity" />
+        <activity android:name=".HistorialMainActivity"></activity>
     </application>
 
 </manifest>

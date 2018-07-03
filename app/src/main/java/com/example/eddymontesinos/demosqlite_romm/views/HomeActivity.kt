@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
@@ -132,7 +131,7 @@ class HomeActivity : AppCompatActivity() {
             }
             R.id.historial ->{
 
-           startActivity<HistorialActivity>()
+           startActivity<HistorialPedidoActivity>()
 
             }
             R.id.salir ->{
