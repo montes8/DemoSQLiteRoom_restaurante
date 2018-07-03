@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".views.DetallePedidoActivity">
 
     <android.support.v7.widget.Toolbar
@@ -13,9 +15,6 @@
         android:layout_height="?attr/actionBarSize"
         android:background="#FF5722"
         android:elevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:titleTextColor="#FFFFFF" />
@@ -23,14 +22,29 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/pedido_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="438dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pedidoToolbar"
-        app:layout_constraintVertical_bias="0.109"
+        android:layout_height="450dp"
         tools:itemCount="5"
+        android:background="@drawable/fondo_recyclerview"
         tools:listitem="@layout/molde_detalle_pedido" />
-</android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SubTotal:"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/text_subtotal_ordenes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="SubTotal"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="#FF5722"
+        android:textSize="20sp"/>
+    </LinearLayout>
+</LinearLayout>

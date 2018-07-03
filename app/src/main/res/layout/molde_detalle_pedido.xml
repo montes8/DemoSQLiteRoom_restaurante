@@ -14,9 +14,8 @@
 
         <ImageView
             android:id="@+id/image_view_plato_detalle"
-            android:layout_width="85dp"
+            android:layout_width="80dp"
             android:layout_height="80dp"
-
             android:scaleType="fitXY"
             android:src="@drawable/huancaina" />
 
@@ -71,7 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:hint="SubTotal"
+                    android:hint="SubTotal: "
                     android:layout_marginLeft="5dp"
                     android:textStyle="bold"
                     android:textSize="10sp" />

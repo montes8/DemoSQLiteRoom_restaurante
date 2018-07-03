@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
@@ -15,10 +16,7 @@ import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 import com.example.eddymontesinos.demosqlite_romm.repository.temporal.OrdenTemporal
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.dialog_cantidad.view.*
-import org.jetbrains.anko.clearTask
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.newTask
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
 
 
 class HomeActivity : AppCompatActivity() {
@@ -54,8 +52,8 @@ class HomeActivity : AppCompatActivity() {
         platosAdapter?.onAgregarOrdenClick ={
 
             val nuevaOrden = DetalleTemporal(it)
-
             OrdenTemporal.agregarItemOrden(nuevaOrden)
+            toast("Orden agregado")
 
             /*
             pedidos.forEach {
@@ -118,8 +116,19 @@ class HomeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.menu_orden ->{
-                val intent = Intent(this@HomeActivity,DetallePedidoActivity::class.java)
-                startActivity(intent)
+             /*   val ordentotal = OrdenTemporal.obtenerOrden()
+                var subtotal=0.00
+                var totalpagar=0
+                ordentotal.forEach {
+                    subtotal = subtotal + it.plato.precioPlato * it.cantidad
+                }
+                totalpagar= subtotal.toInt()
+                Log.d("totalpagar","$subtotal")
+
+                defaultSharedPreferences.edit().putInt("totalpagarpedido",totalpagar).apply()*/
+                val intents = Intent(this@HomeActivity,DetallePedidoActivity::class.java)
+                startActivity(intents)
+
             }
             R.id.salir ->{
                 startActivity(intentFor<LoginActivity>().newTask().clearTask())

@@ -38,7 +38,7 @@ class DetalleAdapter(val contexto: Context,var onEliminarOrdenClick: ((DetalleTe
         holder.idPlatoDetalleNombre.text = detallePedido.plato.nombrePlato
         holder.precioPlatounidad.text = detallePedido.plato.precioPlato.toString()
         holder.catidad.text = detallePedido.cantidad.toString()
-        holder.subtotal.text = subtotal.toString()
+        holder.subtotal.text = "$/"+subtotal.toString()
 
         holder.btnEliminarOrden.setOnClickListener{
 

@@ -10,8 +10,11 @@ import android.view.MenuItem
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.DetalleAdapter
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
+import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.repository.temporal.OrdenTemporal
 import kotlinx.android.synthetic.main.activity_detalle_pedido.*
+import org.jetbrains.anko.defaultSharedPreferences
+import org.jetbrains.anko.support.v4.defaultSharedPreferences
 import org.jetbrains.anko.toast
 
 class DetallePedidoActivity : AppCompatActivity() {
@@ -21,7 +24,10 @@ class DetallePedidoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_pedido)
+
+
         ajustarToolbardetalle()
+        reciclerViewDetalle()
 
 
 
@@ -75,6 +81,18 @@ class DetallePedidoActivity : AppCompatActivity() {
 
         val orden = OrdenTemporal.obtenerOrden()
         detallesAdarper?.addList(orden)
+        ontenidoSubtotal()
+
+    }
+    fun ontenidoSubtotal(){
+
+        val ordentotal = OrdenTemporal.obtenerOrden()
+        var subtotal=0.00
+        ordentotal.forEach {
+            subtotal = subtotal + it.plato.precioPlato * it.cantidad
+        }
+        text_subtotal_ordenes.text = subtotal.toString()
+
     }
 
 }
