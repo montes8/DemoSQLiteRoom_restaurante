@@ -1,5 +1,6 @@
 package com.example.eddymontesinos.demosqlite_romm.repository.temporal
 
+
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 
 object OrdenTemporal {

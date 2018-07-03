@@ -14,9 +14,9 @@
 
         <ImageView
             android:id="@+id/image_view_plato_detalle"
-            android:layout_width="0dp"
+            android:layout_width="85dp"
             android:layout_height="80dp"
-            android:layout_weight="2"
+
             android:scaleType="fitXY"
             android:src="@drawable/huancaina" />
 

@@ -8,13 +8,11 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 import com.example.eddymontesinos.demosqlite_romm.repository.temporal.OrdenTemporal
-import kotlinx.android.synthetic.main.activity_detalle_plato.*
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.dialog_cantidad.view.*
 import org.jetbrains.anko.clearTask
@@ -40,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun ajusteToolbarHome() {
         setSupportActionBar(homeToolbar)
-        title = "LISTA DE PLATOS DE HOY"
+        title = "LISTA DE PLATOS"
     }
 
     private fun cargarRecycler(){
