@@ -12,7 +12,7 @@ import com.example.eddymontesinos.demosqlite_romm.model.DetallePedido
 import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
 import kotlinx.android.synthetic.main.molde_historial_pedido.view.*
 
-class HistorialPedidoAdarper(val contexto: Context) : RecyclerView.Adapter<HistorialPedidoAdarper.HistorialViewHolder>(){
+class HistorialPedidoAdarper(val contexto: Context) : RecyclerView.Adapter<HistorialPedidoAdarper.HistorialPedidoViewHolder>(){
 
     private var historialpedidos : List<DetallePedido>? = null
     val handler = Handler()
@@ -23,9 +23,9 @@ class HistorialPedidoAdarper(val contexto: Context) : RecyclerView.Adapter<Histo
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistorialViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistorialPedidoViewHolder {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.molde_historial_pedido,parent,false)
-        return HistorialViewHolder(view)
+        return HistorialPedidoViewHolder(view)
     }
 
     override fun getItemCount(): Int {
@@ -33,7 +33,7 @@ class HistorialPedidoAdarper(val contexto: Context) : RecyclerView.Adapter<Histo
         return checkedUser.size
     }
 
-    override fun onBindViewHolder(holder: HistorialViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HistorialPedidoViewHolder, position: Int) {
         val pedidoHistorial = historialpedidos!![position]
 
 
@@ -58,7 +58,7 @@ class HistorialPedidoAdarper(val contexto: Context) : RecyclerView.Adapter<Histo
 
     }
 
-    class HistorialViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
+    class HistorialPedidoViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
         val imagePlato = itemView.image_plato_historial
         val txNombrePlato = itemView.nombre_plato_historial
         val txPrecio = itemView.precio_plato_historial

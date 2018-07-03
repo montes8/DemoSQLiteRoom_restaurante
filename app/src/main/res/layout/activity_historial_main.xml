@@ -8,4 +8,21 @@
     android:orientation="vertical"
     tools:context=".HistorialMainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/historialprincipalToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF5722"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextColor="#FFFFFF" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/principalh_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:itemCount="5"
+        android:background="@drawable/fondo_recyclerview"
+        tools:listitem="@layout/molde_historial_pedido" />
+
 </LinearLayout>
