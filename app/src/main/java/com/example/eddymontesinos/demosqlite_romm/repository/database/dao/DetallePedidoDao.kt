@@ -14,11 +14,11 @@ interface DetallePedidoDao {
     @Query("select * from DetallePedido")
     fun litarDetallePedido(): List<DetallePedido>
 
-    @Query("select * from Pedido inner join  DetallePedido on Pedido.idPedido = DetallePedido.pedidoId where DetallePedido.pedidoId= :pedidoId")
+    @Query("select * from DetallePedido inner join  Pedido on  DetallePedido.pedidoId=Pedido.idPedido where DetallePedido.pedidoId= :pedidoId")
     fun detalleDePedido(pedidoId: Long): List<Pedido>
 
-    @Query("select * from Plato inner join  DetallePedido on Plato.idPlato = DetallePedido.platoId where DetallePedido.platoId= :platoId")
-    fun detallesDePlato(platoId : Long):List<Plato>
+    @Query("select * from DetallePedido inner join  Plato on DetallePedido.platoId=Plato.idPlato  where DetallePedido.platoId= :platoId")
+    fun detallesDePlato(platoId : Long):Plato
 
     @Insert
     fun insertarDetallesListaPedido(detalle : ArrayList<DetallePedido>) : Array<Long>

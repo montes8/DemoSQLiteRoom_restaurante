@@ -122,13 +122,17 @@ class HomeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.menu_orden ->{
-                val intents = Intent(this@HomeActivity,DetallePedidoActivity::class.java)
-                startActivity(intents)
 
+                if(!OrdenTemporal.obtenerOrden().isEmpty()) {
+                    val intents = Intent(this@HomeActivity, DetallePedidoActivity::class.java)
+                    startActivity(intents)
+                }else{
+                    toast("No has ordenado aun")
+                }
             }
             R.id.historial ->{
 
-
+           startActivity<HistorialActivity>()
 
             }
             R.id.salir ->{

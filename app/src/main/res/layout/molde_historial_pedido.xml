@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:padding="5dp"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
 
@@ -14,7 +14,7 @@
             android:padding="10dp">
 
             <ImageView
-                android:id="@+id/image_view_plato_detalle"
+                android:id="@+id/image_plato_historial"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:scaleType="fitXY"
