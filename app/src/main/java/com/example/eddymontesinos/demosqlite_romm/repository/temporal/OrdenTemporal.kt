@@ -14,4 +14,8 @@ object OrdenTemporal {
     fun obtenerOrden(): ArrayList<DetalleTemporal>{
         return orden
     }
+
+    fun eliminarOrden(detallePedido: DetalleTemporal){
+        orden.remove(detallePedido)
+    }
 }

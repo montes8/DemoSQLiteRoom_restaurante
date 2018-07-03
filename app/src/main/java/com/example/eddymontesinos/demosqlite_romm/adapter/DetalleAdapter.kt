@@ -10,7 +10,7 @@ import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
 import kotlinx.android.synthetic.main.molde_detalle_pedido.view.*
 
-class DetalleAdapter(val contexto: Context) : RecyclerView.Adapter<DetalleAdapter.DetalleTemporalViewHolder>(){
+class DetalleAdapter(val contexto: Context,var onEliminarOrdenClick: ((DetalleTemporal) -> Unit)? = null) : RecyclerView.Adapter<DetalleAdapter.DetalleTemporalViewHolder>(){
 
     private var detalleaTemporal : List<DetalleTemporal>? = null
 
@@ -34,12 +34,16 @@ class DetalleAdapter(val contexto: Context) : RecyclerView.Adapter<DetalleAdapte
         val detallePedido = detalleaTemporal!![position]
 
         val subtotal = detallePedido.plato.precioPlato * detallePedido.cantidad
-
-       holder.imagenDetalle.setImageDrawable(DemoUtils.getImage(contexto, detallePedido.plato.imagen))
+        holder.imagenDetalle.setImageDrawable(DemoUtils.getImage(contexto, detallePedido.plato.imagen))
         holder.idPlatoDetalleNombre.text = detallePedido.plato.nombrePlato
         holder.precioPlatounidad.text = detallePedido.plato.precioPlato.toString()
         holder.catidad.text = detallePedido.cantidad.toString()
         holder.subtotal.text = subtotal.toString()
+
+        holder.btnEliminarOrden.setOnClickListener{
+
+            onEliminarOrdenClick?.invoke(detallePedido)
+        }
     }
 
     class DetalleTemporalViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
@@ -50,5 +54,6 @@ class DetalleAdapter(val contexto: Context) : RecyclerView.Adapter<DetalleAdapte
         val precioPlatounidad = itemView.text_precio_unitario
         val catidad = itemView.text_cantidad_platos
         val subtotal = itemView.text_subtotal_detalle
+        val btnEliminarOrden = itemView.image_eliminar
     }
 }
