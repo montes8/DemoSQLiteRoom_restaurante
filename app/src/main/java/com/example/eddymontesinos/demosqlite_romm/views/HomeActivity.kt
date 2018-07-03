@@ -13,6 +13,7 @@ import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
+import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.repository.temporal.OrdenTemporal
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.dialog_cantidad.view.*
@@ -51,24 +52,8 @@ class HomeActivity : AppCompatActivity() {
 
         platosAdapter?.onAgregarOrdenClick ={
 
-            val nuevaOrden = DetalleTemporal(it)
-            OrdenTemporal.agregarItemOrden(nuevaOrden)
+            agregarOrActualizarItemOrden(it, 1)
             toast("Orden agregado")
-
-            /*
-            pedidos.forEach {
-                subTotal=subTotal+ it.precioDePlato!!
-                contarplatos=contarplatos+cantidad
-                Log.d("idDePlato","${it.idDePlato}")
-                Log.d("cantidadPlato","${it.cantidadPlato}")
-                Log.d("precioDePlato","${it.precioDePlato}")
-            }
-
-            val totalsub = subTotal
-            val cantidades = contarplatos
-            Log.d("totalplatos",""+cantidades)
-            Log.d("totalpagar",""+totalsub)
-                 Log.d("tot6allistas",""+pedidos.size)*/
 
         }
         platosAdapter?.onAgregarCantidadClick ={plato ->
@@ -86,8 +71,11 @@ class HomeActivity : AppCompatActivity() {
             dialogView.btnagregar_orden_dialog.setOnClickListener{
 
                 if(!dialogView.cantidad_plato_dialog.text.toString().isEmpty()){
-                    val nuevaOrdend = DetalleTemporal(plato,dialogView.cantidad_plato_dialog.text.toString().toInt())
-                    OrdenTemporal.agregarItemOrden(nuevaOrdend)
+
+                    val cantidadPlatoOrden = dialogView.cantidad_plato_dialog.text.toString().toInt()
+
+                    agregarOrActualizarItemOrden(plato, cantidadPlatoOrden)
+
                     dialog.dismiss()
                 }else{
                     toast("Ingrese Cantidad")
@@ -113,19 +101,27 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
+    fun agregarOrActualizarItemOrden(plato: Plato, cantidad: Int){
+        val indicePlatoSiExiste = OrdenTemporal.buscarPlato(plato)
+
+        if(indicePlatoSiExiste >= 0){
+
+            val cantidadActual = OrdenTemporal.obtenerCantidadPlatoSegunIndice(indicePlatoSiExiste)
+
+            val totalCantidad = cantidadActual+cantidad
+            val pedidoActualizado = DetalleTemporal(plato, totalCantidad)
+
+            OrdenTemporal.actualizarItemOrden(pedidoActualizado, indicePlatoSiExiste )
+        }else{
+
+            val nuevaOrden = DetalleTemporal(plato, cantidad)
+            OrdenTemporal.agregarItemOrden(nuevaOrden)
+        }
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.menu_orden ->{
-             /*   val ordentotal = OrdenTemporal.obtenerOrden()
-                var subtotal=0.00
-                var totalpagar=0
-                ordentotal.forEach {
-                    subtotal = subtotal + it.plato.precioPlato * it.cantidad
-                }
-                totalpagar= subtotal.toInt()
-                Log.d("totalpagar","$subtotal")
-
-                defaultSharedPreferences.edit().putInt("totalpagarpedido",totalpagar).apply()*/
                 val intents = Intent(this@HomeActivity,DetallePedidoActivity::class.java)
                 startActivity(intents)
 

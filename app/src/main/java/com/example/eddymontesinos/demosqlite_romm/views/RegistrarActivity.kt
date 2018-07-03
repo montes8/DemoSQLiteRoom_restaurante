@@ -58,7 +58,7 @@ class RegistrarActivity : AppCompatActivity() {
                         usuario.pais = edit_pais.text.toString()
 
                         val nuevoId = DemoApplication.database!!.usuarioDao().insert(usuario)
-                        //val a:Int = resultado.toInt()
+                        defaultSharedPreferences.edit().putLong("idUsuarioLogeado",nuevoId).apply()
                         if (nuevoId > 0) {
                             Log.i("idregistrado", "$nuevoId")
                             handler.post {
@@ -67,8 +67,6 @@ class RegistrarActivity : AppCompatActivity() {
                                 edit_text_user.setText("")
                                 edit_password.setText("")
                                 edit_pais.setText("")
-
-                                defaultSharedPreferences.edit().putString("idUsuarioLogeado", nuevoId.toString()).apply()
 
                                 startActivity(intentFor<HomeActivity>().newTask().clearTask())
                             }
