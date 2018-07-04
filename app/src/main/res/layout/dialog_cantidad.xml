@@ -14,6 +14,8 @@
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:text="TextView"
+        android:textSize="20sp"
+        android:textColor="#FF5722"
         android:textStyle="bold"
         />
 
@@ -23,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="TextView"
-        android:textColor="#FF5722"
+
     />
 
     <EditText
@@ -31,14 +33,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="Cantidad"
+        android:hint="cantidad"
+      
        />
 
     <Button
         android:id="@+id/btnagregar_orden_dialog"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:text="agregar "
+        android:ems="8"
+        android:background="@drawable/button_style"
         android:layout_gravity="center"
+        android:textColor="#f87503"
         />
 </LinearLayout>

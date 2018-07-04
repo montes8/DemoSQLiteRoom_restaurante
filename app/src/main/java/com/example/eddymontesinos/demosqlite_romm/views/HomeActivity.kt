@@ -66,13 +66,14 @@ class HomeActivity : AppCompatActivity() {
             dialogBuilder.setCancelable(true)
 
             dialogView.nombre_plato_dialog.text = plato.nombrePlato
-            dialogView.precio_plato_dialog.text = plato.precioPlato.toString()
+            dialogView.precio_plato_dialog.text = "$/ "+plato.precioPlato.toString()
 
             val dialog = dialogBuilder.create()
             dialogView.btnagregar_orden_dialog.setOnClickListener{
 
                 if(!dialogView.cantidad_plato_dialog.text.toString().isEmpty()){
 
+                    toast("Orden Agregada")
                     val cantidadPlatoOrden = dialogView.cantidad_plato_dialog.text.toString().toInt()
 
                     agregarOrActualizarItemOrden(plato, cantidadPlatoOrden)
