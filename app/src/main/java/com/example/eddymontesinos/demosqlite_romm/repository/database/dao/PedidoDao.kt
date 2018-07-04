@@ -14,6 +14,9 @@ interface PedidoDao {
     @Query("select * from Pedido where userId = :userId ")
     fun verpedidosUsuario(userId:String) : List<Pedido>
 
+    @Query("select * from Pedido where idPedido= :pedidoid")
+    fun otenerpedidoId(pedidoid : Long) : Pedido
+
 
     @Insert
     fun insertarListaPedido(pedido : ArrayList<Pedido>) : Array<Long>

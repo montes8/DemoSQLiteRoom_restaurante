@@ -5,17 +5,14 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
-import com.example.eddymontesinos.demosqlite_romm.model.DetallePedido
 import com.example.eddymontesinos.demosqlite_romm.model.Pedido
-import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
-import kotlinx.android.synthetic.main.molde_historial_pedido.view.*
+import com.example.eddymontesinos.demosqlite_romm.model.Plato
+import kotlinx.android.synthetic.main.molde_historial.view.*
 
-class HistorialAdapter : RecyclerView.Adapter<HistorialAdapter.HistorialViewHolder>(){
+class HistorialAdapter(var onDetallePedidoClick: ((Pedido) -> Unit)? = null) : RecyclerView.Adapter<HistorialAdapter.HistorialViewHolder>(){
 
     private var listaPedidos : List<Pedido>? = null
-    val handler = Handler()
 
     fun addList(listaPedidos : List<Pedido>){
         this.listaPedidos = listaPedidos
@@ -24,7 +21,7 @@ class HistorialAdapter : RecyclerView.Adapter<HistorialAdapter.HistorialViewHold
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistorialViewHolder {
-        val view : View = LayoutInflater.from(parent.context).inflate(R.layout.molde_historial_pedido,parent,false)
+        val view : View = LayoutInflater.from(parent.context).inflate(R.layout.molde_historial,parent,false)
         return HistorialViewHolder(view)
     }
 
@@ -36,30 +33,21 @@ class HistorialAdapter : RecyclerView.Adapter<HistorialAdapter.HistorialViewHold
     override fun onBindViewHolder(holder: HistorialViewHolder, position: Int) {
         val pedido = listaPedidos!![position]
 
+            holder.idPedido.text = pedido.idPedido.toString()
+            holder.totalPagar.text = pedido.montoTotal.toString()
+            holder.fechaPagarPedido.text = pedido.fecha
+            holder.itemView.setOnClickListener{
 
-        /*Thread {
-            val plato = DemoApplication.database!!.detallePedidoDao().detallesDePlato(pedido.platoId!!.toLong())
-            val pedido = DemoApplication.database!!.detallePedidoDao().detalleDePedido(pedido.pedidoId!!.toLong())
+                onDetallePedidoClick?.invoke(pedido)
 
-            handler.post {
-                holder.txNombrePlato.text = plato.nombrePlato
-                holder.txPrecio.text = plato.precioPlato.toString()
-                holder.fechaPedido.text = pedido.fecha
             }
-        }.start()*/
-
-
-
-    /*    holder.cantidadPlatos.text = pedidoHistorial.cantidad.toString()
-        holder.subtotalPagar.text = pedidoHistorial.subTotal.toString()*/
-
-
 
     }
 
     class HistorialViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
-        val imagePlato = itemView.image_plato_historial
-
+        val idPedido = itemView.id_pedido
+        val totalPagar = itemView.total_pagar_pedido
+        val fechaPagarPedido = itemView.fecha_pedido
 
     }
 }

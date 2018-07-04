@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
+import com.example.eddymontesinos.demosqlite_romm.HistorialMainActivity
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
@@ -131,7 +132,7 @@ class HomeActivity : AppCompatActivity() {
             }
             R.id.historial ->{
 
-           startActivity<HistorialPedidoActivity>()
+           startActivity<HistorialMainActivity>()
 
             }
             R.id.salir ->{
