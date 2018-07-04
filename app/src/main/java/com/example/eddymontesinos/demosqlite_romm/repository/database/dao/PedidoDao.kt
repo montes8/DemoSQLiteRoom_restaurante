@@ -18,6 +18,9 @@ interface PedidoDao {
     fun otenerpedidoId(pedidoid : Long) : Pedido
 
 
+    @Query("SELECT COUNT(*) FROM pedido")
+    fun optieneCantidadDeFila():Int
+
     @Insert
     fun insertarListaPedido(pedido : ArrayList<Pedido>) : Array<Long>
 

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -140,12 +141,13 @@ class HomeActivity : AppCompatActivity() {
             }
             R.id.historial ->{
                 Thread{
-                    val listacomprobar = DemoApplication.database!!.pedidoDao().litarPedido()
-                    if (listacomprobar.isEmpty()){
-                        handler.post { toast("Historial vacio") }
+                    val listaFila = DemoApplication.database!!.pedidoDao().optieneCantidadDeFila()
+                    if (listaFila > 0){
+
+                        handler.post { startActivity<HistorialMainActivity>() }
 
                     }else{
-                        handler.post { startActivity<HistorialMainActivity>() }
+                        handler.post { toast("Historial vacio") }
                     }
                 }.start()
             }
