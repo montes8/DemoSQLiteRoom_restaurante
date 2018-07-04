@@ -35,6 +35,8 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:support-v4:27.1.1'
 
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
     //anko
     implementation 'org.jetbrains.anko:anko:0.10.1'
     //Recyclerview

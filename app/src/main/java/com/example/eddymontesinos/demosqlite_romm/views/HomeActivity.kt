@@ -10,7 +10,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
-import com.example.eddymontesinos.demosqlite_romm.HistorialMainActivity
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
@@ -19,14 +18,10 @@ import com.example.eddymontesinos.demosqlite_romm.repository.temporal.OrdenTempo
 import com.example.eddymontesinos.demosqlite_romm.utils.Converters
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.dialog_cantidad.view.*
-import kotlinx.android.synthetic.main.molde_item_toolbar.*
 import org.jetbrains.anko.*
 
 
 class HomeActivity : AppCompatActivity() {
-
-
-
     var platosAdapter : ListaPlatosAdarper? = null
     var handler :Handler = Handler()
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:padding="5dp"
@@ -13,12 +14,14 @@
             android:background="@drawable/button_style"
             android:padding="10dp">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_plato_historial"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/huancaina" />
+                app:civ_border_color="#ff5f47"
+                app:civ_border_width="2dp"
+                android:src="@drawable/huancaina"
+                />
 
 
             <LinearLayout

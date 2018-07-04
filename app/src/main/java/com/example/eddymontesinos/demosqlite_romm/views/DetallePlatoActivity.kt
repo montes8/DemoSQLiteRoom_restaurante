@@ -6,8 +6,6 @@ import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
 import kotlinx.android.synthetic.main.activity_detalle_plato.*
-import kotlinx.android.synthetic.main.activity_registrar.*
-import kotlinx.android.synthetic.main.item_molde_platos.*
 
 class DetallePlatoActivity : AppCompatActivity() {
 

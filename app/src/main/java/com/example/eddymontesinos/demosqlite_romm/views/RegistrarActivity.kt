@@ -19,6 +19,7 @@ class RegistrarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_registrar)
 
         ajusteToolbar()
+
         registrarUsuario()
     }
 

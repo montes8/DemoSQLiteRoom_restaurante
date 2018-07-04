@@ -1,6 +1,5 @@
 package com.example.eddymontesinos.demosqlite_romm.adapter
 
-import android.app.AlertDialog
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

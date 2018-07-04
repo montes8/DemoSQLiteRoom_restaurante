@@ -15,10 +15,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-
         val anima : Animation
         val anima2 : Animation
-
 
         anima = AnimationUtils.loadAnimation(this, R.anim.animacion)
         anima2 = AnimationUtils.loadAnimation(this, R.anim.animacion_botton)

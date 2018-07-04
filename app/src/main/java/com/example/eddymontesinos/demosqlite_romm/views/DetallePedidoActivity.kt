@@ -104,7 +104,10 @@ class DetallePedidoActivity : AppCompatActivity() {
 
         detallesAdarper?.onEliminarOrdenClick ={
             OrdenTemporal.eliminarOrden(it)
-            refrescarListaDetalle()
+            if (OrdenTemporal.obtenerOrden().isEmpty()){
+                finish()
+            }else{
+            refrescarListaDetalle()}
         }
 
     }
@@ -112,7 +115,7 @@ class DetallePedidoActivity : AppCompatActivity() {
     fun refrescarListaDetalle(){
 
         val orden = OrdenTemporal.obtenerOrden()
-/*
+         /*
         val listaFiltrada = ArrayList<DetalleTemporal>()
 
         orden.forEach { ordenItem ->

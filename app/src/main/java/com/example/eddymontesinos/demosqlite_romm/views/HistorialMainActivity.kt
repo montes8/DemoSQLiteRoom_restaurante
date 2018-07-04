@@ -1,11 +1,12 @@
-package com.example.eddymontesinos.demosqlite_romm
+package com.example.eddymontesinos.demosqlite_romm.views
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
+import com.example.eddymontesinos.demosqlite_romm.DemoApplication
+import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.HistorialAdapter
-import com.example.eddymontesinos.demosqlite_romm.views.HistorialPedidoActivity
 import kotlinx.android.synthetic.main.activity_historial_main.*
 import org.jetbrains.anko.defaultSharedPreferences
 import org.jetbrains.anko.startActivity
