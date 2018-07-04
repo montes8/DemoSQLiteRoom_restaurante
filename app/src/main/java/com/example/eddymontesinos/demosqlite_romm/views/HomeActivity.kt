@@ -22,6 +22,7 @@ import org.jetbrains.anko.*
 
 
 class HomeActivity : AppCompatActivity() {
+
     var platosAdapter : ListaPlatosAdarper? = null
     var handler :Handler = Handler()
 
@@ -30,8 +31,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
       cargarRecycler()
-
-
     }
 
     override fun onResume() {
@@ -145,24 +144,25 @@ class HomeActivity : AppCompatActivity() {
 
             }
             R.id.salir ->{
+                defaultSharedPreferences.edit().putLong("idUsuarioLogeado",0).apply()
                 startActivity(intentFor<LoginActivity>().newTask().clearTask())
             }
-
-
         }
         return super.onOptionsItemSelected(item)
         }
 
-
-        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
             menuInflater.inflate(R.menu.menu, menu)
             val menuItem =menu?.findItem(R.id.menu_orden)
             menuItem?.icon = Converters.convertLayoutToImage(this, OrdenTemporal.totalOrdenes(), R.drawable.ic_orden)
             return true
         }
 
+    override fun onBackPressed() {
 
+        moveTaskToBack(true)
     }
+}
 
 
 

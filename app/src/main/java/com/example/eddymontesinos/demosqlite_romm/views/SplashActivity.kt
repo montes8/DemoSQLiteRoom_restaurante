@@ -7,6 +7,8 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import com.example.eddymontesinos.demosqlite_romm.R
 import kotlinx.android.synthetic.main.activity_splash.*
+import org.jetbrains.anko.defaultSharedPreferences
+import org.jetbrains.anko.startActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -33,8 +35,16 @@ class SplashActivity : AppCompatActivity() {
             override fun run() {
                 try {
                     Thread.sleep((3*1000).toLong())
-                    val i = Intent(baseContext, LoginActivity::class.java)
-                    startActivity(i)
+                    val idUsuarioLogeado = defaultSharedPreferences.getLong("idUsuarioLogeado",0)
+
+                    if (idUsuarioLogeado > 0){
+
+                        startActivity<HomeActivity>()
+                    }else{
+                        val i = Intent(baseContext, LoginActivity::class.java)
+                        startActivity(i)
+                    }
+
                     finish()
                 } catch (e: Exception) {
                     e.printStackTrace()
