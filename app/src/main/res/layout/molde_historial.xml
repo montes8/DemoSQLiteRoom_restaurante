@@ -11,26 +11,47 @@
         android:padding="10dp"
         >
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF5722"
+            android:textStyle="bold"
+            android:text="Pedido:"/>
+        <TextView
             android:id="@+id/id_pedido"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:gravity="center"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
-            android:text="idPedido"/>
+            android:text="id"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF5722"
+            android:textStyle="bold"
+            android:text="Total:"/>
         <TextView
             android:id="@+id/total_pagar_pedido"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:gravity="center"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
-            android:text="totalpedido"/>
+            android:text="total"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF5722"
+            android:textStyle="bold"
+            android:text="Fecha:"/>
         <TextView
             android:id="@+id/fecha_pedido"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:gravity="center"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
-            android:text="fechapedido"/>
+            android:text="fecha"/>
 
 
     </LinearLayout>
