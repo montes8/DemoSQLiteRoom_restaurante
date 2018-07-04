@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import com.example.eddymontesinos.demosqlite_romm.adapter.HistorialAdapter
 import com.example.eddymontesinos.demosqlite_romm.views.HistorialPedidoActivity
 import kotlinx.android.synthetic.main.activity_historial_main.*
-import kotlinx.android.synthetic.main.activity_historial_pedido.*
+import org.jetbrains.anko.defaultSharedPreferences
 import org.jetbrains.anko.startActivity
 
 class HistorialMainActivity : AppCompatActivity() {
@@ -47,6 +47,7 @@ class HistorialMainActivity : AppCompatActivity() {
 
         hAdapter?.onDetallePedidoClick ={
 
+            defaultSharedPreferences.edit().putLong("idpedidohistorial",it.idPedido!!.toLong()).apply()
             startActivity<HistorialPedidoActivity>()
         }
 

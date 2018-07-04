@@ -9,6 +9,7 @@ import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.model.Pedido
 import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import kotlinx.android.synthetic.main.molde_historial.view.*
+import org.jetbrains.anko.defaultSharedPreferences
 
 class HistorialAdapter(var onDetallePedidoClick: ((Pedido) -> Unit)? = null) : RecyclerView.Adapter<HistorialAdapter.HistorialViewHolder>(){
 

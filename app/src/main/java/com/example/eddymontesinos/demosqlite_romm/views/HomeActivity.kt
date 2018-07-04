@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.HistorialMainActivity
 import com.example.eddymontesinos.demosqlite_romm.R
@@ -53,7 +54,7 @@ class HomeActivity : AppCompatActivity() {
         platosAdapter?.onAgregarOrdenClick ={
 
             agregarOrActualizarItemOrden(it, 1)
-            toast("Orden agregado")
+            Toast.makeText(this@HomeActivity,"Orden Agregada",Toast.LENGTH_SHORT).show()
 
         }
         platosAdapter?.onAgregarCantidadClick ={plato ->
