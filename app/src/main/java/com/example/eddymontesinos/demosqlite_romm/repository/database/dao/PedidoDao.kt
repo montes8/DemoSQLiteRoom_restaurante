@@ -12,7 +12,7 @@ interface PedidoDao {
     fun litarPedido(): List<Pedido>
 
     @Query("select * from Pedido where userId = :userId ")
-    fun verpedidosUsuario(userId:String) : List<Pedido>
+    fun verpedidosUsuario(userId:Long) : List<Pedido>
 
     @Query("select * from Pedido where idPedido= :pedidoid")
     fun otenerpedidoId(pedidoid : Long) : Pedido

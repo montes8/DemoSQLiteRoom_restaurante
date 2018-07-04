@@ -55,7 +55,9 @@ class HistorialMainActivity : AppCompatActivity() {
         principalh_recyclerview.adapter = hAdapter
 
         Thread {
-            val lista = DemoApplication.database!!.pedidoDao().litarPedido()
+
+            val idUsuPedido = defaultSharedPreferences.getLong("idUsuarioLogeado",0)
+            val lista = DemoApplication.database!!.pedidoDao().verpedidosUsuario(idUsuPedido)
 
             handler.post {
                 hAdapter!!.addList(lista)
