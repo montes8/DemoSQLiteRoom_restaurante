@@ -4,5 +4,28 @@
     <string name="registrate">¿Eres nuevo? Registrate</string>
     <string name="toolbar_registrate">Registrate</string>
     <string name="platos"> LISTA DE PLATOS </string>
+    <string name="precio">precio</string>
+    <string name="plato">plato</string>
+    <string name="cantidad">Cantidad:</string>
+    <string name="subtotal">SubTotal:</string>
+    <string name="total">Total:</string>
+    <string name="fecha">Fecha:</string>
+    <string name="pedido">Pedido:</string>
+
+
+
+    //Descripciopn de platos
+
+    <string name="lomo">El lomo saltado es un plato que data del siglo XIX, cuando era conocido con diversas denominaciones (p. ej. lomito de vaca, lomito saltado o lomito de chorrillana).</string>
+    <string name="arrozpollo">Por simple que pueda parecer el nombre, el arroz con pollo es una receta tradicional peruana. De aspecto verde, es un plato muy sabroso debido a la variedad de ingredientes que incluye.</string>
+    <string name="ceviche">En Perú, el ceviche no es meramente un plato típico, sino un signo de identidad nacional que, de hecho, ha sido declarado Patrimonio Cultural de la Nación.</string>
+    <string name="rocoto">El rocoto relleno es un plato de origen arequipeño para el que se emplea, tal y como su propio nombre indica, rocoto. </string>
+    <string name="aji">Para comenzar, la carne de gallina siempre ha tenido fama de tener mucho mejor sabor, así que para los amantes de la comida criolla. </string>
+    <string name="papahuancaina">La papa a la huancaína es uno de los platos más populares de la costa y la sierra peruanas.</string>
+    <string name="cuy">Si bien para muchos turistas extranjeros este pequeño y tierno roedor cumple las funciones de mascota de la casa. </string>
+    <string name="chaufa">Consiste en arroz frito mezclado con diversos tipos de carne y salsa de soja. En realidad.</string>
+    <string name="caucau">Este plato de denominación tan original es otro de los principales de la gastronomía peruana y consiste en una mezcla de mondongo de pollo con papas amarillas.</string>
+    <string name="causa">En la actualidad, para preparar causa limeña se necesitan los siguientes ingredientes: papa amarilla peruana, ají, lechuga, limón, huevo cocido, palta y aceitunas negras. </string>
+    <string name="escabeche">El escabeche peruano es un plato que puede consumirse tanto en reuniones familiares como durante la semana.</string>
 
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,7 +18,6 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:titleTextColor="#FFFFFF" />
-
     <TextView
         android:id="@+id/text_precio_detalle"
         android:layout_width="wrap_content"
@@ -53,10 +53,10 @@
 
     <TextView
         android:id="@+id/text_descripcion"
-        android:layout_width="250dp"
-        android:layout_height="37dp"
+        android:layout_width="262dp"
+        android:layout_height="92dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:text="descripcion ...aaa"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +69,8 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:text="Precio"
+        android:textColor="#FF5722"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -79,6 +81,8 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="24dp"
         android:text="Calorias"
+        android:textStyle="bold"
+        android:textColor="#FF5722"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -89,6 +93,8 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="24dp"
         android:text="Descuento"
+        android:textStyle="bold"
+        android:textColor="#FF5722"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -99,6 +105,8 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="24dp"
         android:text="Descripción:"
+        android:textStyle="bold"
+        android:textColor="#FF5722"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -109,6 +117,7 @@
         android:layout_height="27dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
+        android:textStyle="bold"
         android:text="Informacion de Plato"
         android:textColor="#ff5f47"
         app:layout_constraintEnd_toEndOf="parent"

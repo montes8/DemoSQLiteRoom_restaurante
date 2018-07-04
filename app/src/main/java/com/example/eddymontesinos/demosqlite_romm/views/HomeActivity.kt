@@ -139,9 +139,15 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
             R.id.historial ->{
+                Thread{
+                    val listacomprobar = DemoApplication.database!!.pedidoDao().litarPedido()
+                    if (listacomprobar.isEmpty()){
+                        handler.post { toast("Historial vacio") }
 
-           startActivity<HistorialMainActivity>()
-
+                    }else{
+                        handler.post { startActivity<HistorialMainActivity>() }
+                    }
+                }.start()
             }
             R.id.salir ->{
                 defaultSharedPreferences.edit().putLong("idUsuarioLogeado",0).apply()

@@ -39,7 +39,7 @@
                     android:id="@+id/nombre_plato_historial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="plato"
+                    android:hint="@string/plato"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -50,7 +50,7 @@
                     android:textStyle="bold"
                     android:textColor="#FF5722"
                     android:layout_marginTop="10dp"
-                    android:text="precio" />
+                    android:text="@string/precio" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:hint="Cantidad:"
+                        android:hint="@string/cantidad"
                         android:textSize="10sp" />
 
                     <TextView
@@ -78,7 +78,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:hint="SubTotal: "
+                        android:hint="@string/subtotal"
                         android:layout_marginLeft="5dp"
                         android:textStyle="bold"
                         android:textSize="10sp" />

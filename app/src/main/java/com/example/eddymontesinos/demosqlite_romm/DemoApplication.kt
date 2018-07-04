@@ -16,7 +16,7 @@ class DemoApplication : Application() {
         super.onCreate()
 
         database = Room.databaseBuilder(this,DemoDataBase::class.java,"demo_restaurant.db")
-                .addCallback(PoblarBaseDatosCallback())
+                .addCallback(PoblarBaseDatosCallback(this))
                 .build()
     }
 }

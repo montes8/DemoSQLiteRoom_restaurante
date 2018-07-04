@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:textColor="#FF5722"
             android:textStyle="bold"
-            android:text="Pedido:"/>
+            android:text="@string/pedido"/>
         <TextView
             android:id="@+id/id_pedido"
             android:layout_width="0dp"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:textColor="#FF5722"
             android:textStyle="bold"
-            android:text="Total:"/>
+            android:text="@string/total"/>
         <TextView
             android:id="@+id/total_pagar_pedido"
             android:layout_width="0dp"
@@ -37,13 +37,13 @@
             android:gravity="center"
             android:textStyle="bold"
             android:layout_height="wrap_content"
-            android:text="total"/>
+            android:text="@string/total"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FF5722"
             android:textStyle="bold"
-            android:text="Fecha:"/>
+            android:text="@string/fecha"/>
         <TextView
             android:id="@+id/fecha_pedido"
             android:layout_width="0dp"
@@ -51,7 +51,7 @@
             android:gravity="center"
             android:textStyle="bold"
             android:layout_height="wrap_content"
-            android:text="fecha"/>
+            android:text="@string/fecha"/>
 
 
     </LinearLayout>
