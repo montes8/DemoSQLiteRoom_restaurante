@@ -40,4 +40,8 @@ object OrdenTemporal {
     fun limpiarOrden(){
         orden.clear()
     }
+
+    fun totalOrdenes(): Int{
+        return  orden.size
+    }
 }

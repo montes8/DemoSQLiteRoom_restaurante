@@ -2,10 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/menu_orden"
-        android:title="Configuracion"
-        android:icon="@drawable/ic_orden"
-        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_orden"
+        android:actionLayout="@layout/molde_item_toolbar"
+        android:title="itemcoun"
+        app:showAsAction="always" />
+
     <item android:id="@+id/historial"
         android:title="Historial"
         app:showAsAction="never"/>
@@ -13,5 +15,6 @@
     <item android:id="@+id/salir"
         android:title="Salir"
         app:showAsAction="never"/>
+
 
 </menu>

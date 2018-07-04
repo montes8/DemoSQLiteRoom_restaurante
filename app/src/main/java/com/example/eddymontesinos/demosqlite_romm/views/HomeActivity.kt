@@ -16,15 +16,18 @@ import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.repository.temporal.OrdenTemporal
+import com.example.eddymontesinos.demosqlite_romm.utils.Converters
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.dialog_cantidad.view.*
+import kotlinx.android.synthetic.main.molde_item_toolbar.*
 import org.jetbrains.anko.*
 
 
 class HomeActivity : AppCompatActivity() {
 
-    var platosAdapter : ListaPlatosAdarper? = null
 
+
+    var platosAdapter : ListaPlatosAdarper? = null
     var handler :Handler = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +37,11 @@ class HomeActivity : AppCompatActivity() {
       cargarRecycler()
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        invalidateOptionsMenu()
     }
 
     private fun ajusteToolbarHome() {
@@ -52,7 +60,6 @@ class HomeActivity : AppCompatActivity() {
         }
 
         platosAdapter?.onAgregarOrdenClick ={
-
             agregarOrActualizarItemOrden(it, 1)
             Toast.makeText(this@HomeActivity,"Orden Agregada",Toast.LENGTH_SHORT).show()
 
@@ -72,9 +79,9 @@ class HomeActivity : AppCompatActivity() {
             dialogView.btnagregar_orden_dialog.setOnClickListener{
 
                 if(!dialogView.cantidad_plato_dialog.text.toString().isEmpty()){
-
                     toast("Orden Agregada")
                     val cantidadPlatoOrden = dialogView.cantidad_plato_dialog.text.toString().toInt()
+
 
                     agregarOrActualizarItemOrden(plato, cantidadPlatoOrden)
 
@@ -118,11 +125,16 @@ class HomeActivity : AppCompatActivity() {
 
             val nuevaOrden = DetalleTemporal(plato, cantidad)
             OrdenTemporal.agregarItemOrden(nuevaOrden)
+
+            invalidateOptionsMenu()
         }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+
         when(item.itemId){
+
             R.id.menu_orden ->{
 
                 if(!OrdenTemporal.obtenerOrden().isEmpty()) {
@@ -141,14 +153,22 @@ class HomeActivity : AppCompatActivity() {
                 startActivity(intentFor<LoginActivity>().newTask().clearTask())
             }
 
+
         }
         return super.onOptionsItemSelected(item)
+        }
+
+
+        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+            menuInflater.inflate(R.menu.menu, menu)
+            val menuItem =menu?.findItem(R.id.menu_orden)
+            menuItem?.icon = Converters.convertLayoutToImage(this, OrdenTemporal.totalOrdenes(), R.drawable.ic_orden)
+            return true
+        }
+
+
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return true
-    }
 
-}
+
