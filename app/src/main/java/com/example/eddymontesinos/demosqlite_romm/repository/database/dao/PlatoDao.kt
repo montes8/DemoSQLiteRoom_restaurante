@@ -11,6 +11,9 @@ interface PlatoDao {
     @Query("select * from Plato")
     fun litarPlatos(): List<Plato>
 
+    @Query("select * from Plato where categoriaId = :Id ")
+    fun verPlatoSegunCategoria (Id:Long) : List<Plato>
+
     @Insert
     fun insertarListaPlatos(plato : ArrayList<Plato>) : Array<Long>
 }
