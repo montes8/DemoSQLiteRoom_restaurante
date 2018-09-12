@@ -69,7 +69,7 @@ class RegistrarActivity : AppCompatActivity() {
                                 edit_password.setText("")
                                 edit_pais.setText("")
 
-                                startActivity(intentFor<HomeActivity>().newTask().clearTask())
+                                startActivity(intentFor<CategoriaActivity>().newTask().clearTask())
                             }
                         } else {
                             handler.post { toast("errorrrr") }
