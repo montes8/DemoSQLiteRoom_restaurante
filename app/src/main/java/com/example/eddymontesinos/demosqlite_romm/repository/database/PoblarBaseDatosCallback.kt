@@ -18,11 +18,11 @@ class PoblarBaseDatosCallback(val context: Context):  RoomDatabase.Callback(){
         Log.i("db", "onCreate()")
 
         val Categoriauno= Categoria(categoria = "Criolla",fotoCategoria = "aji")
-        val Categoriados = Categoria(categoria = "Polleria",fotoCategoria = "arroz")
-        val Categoriatres = Categoria(categoria = "Oriental",fotoCategoria = "causa")
-        val Categoriacuatro = Categoria(categoria = "Pizza",fotoCategoria = "ceviche")
-        val Categoriacinco = Categoria(categoria = "caffe",fotoCategoria = "chaufa")
-        val Categoriaseis = Categoria(categoria = "Jugos",fotoCategoria = "cuy")
+        val Categoriados = Categoria(categoria = "Polleria",fotoCategoria = "pollos")
+        val Categoriatres = Categoria(categoria = "Oriental",fotoCategoria = "chaufa")
+        val Categoriacuatro = Categoria(categoria = "Pizza",fotoCategoria = "pizza")
+        val Categoriacinco = Categoria(categoria = "caffe",fotoCategoria = "caffe")
+        val Categoriaseis = Categoria(categoria = "Jugos",fotoCategoria = "jugo")
         //poner inserts
 
 
