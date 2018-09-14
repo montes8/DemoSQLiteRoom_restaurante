@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".views.CategoriaActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/CategoriaToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF5722"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextColor="#FFFFFF" />
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recyclerviewCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="5"
+        tools:listitem="@layout/molde_categoria" />
+
+</LinearLayout>

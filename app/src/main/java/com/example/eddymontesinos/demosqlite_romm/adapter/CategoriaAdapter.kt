@@ -41,7 +41,7 @@ class CategoriaAdapter (val contexto: Context, var onCategoriaClick: ((Categoria
         holder.itemView.setOnClickListener{
             onCategoriaClick?.invoke(categoria)
         }
-       
+
 
     }
 
