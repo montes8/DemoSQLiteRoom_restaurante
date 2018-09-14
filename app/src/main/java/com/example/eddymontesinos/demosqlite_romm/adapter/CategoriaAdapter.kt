@@ -10,6 +10,7 @@ import com.example.eddymontesinos.demosqlite_romm.model.Categoria
 import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
 import kotlinx.android.synthetic.main.item_molde_platos.view.*
+import kotlinx.android.synthetic.main.molde_categoria.view.*
 
 class CategoriaAdapter (val contexto: Context, var onCategoriaClick: ((Categoria) -> Unit)? = null) : RecyclerView.Adapter<CategoriaAdapter.CategoriaViewHolder>(){
 
@@ -46,8 +47,8 @@ class CategoriaAdapter (val contexto: Context, var onCategoriaClick: ((Categoria
     }
 
     class CategoriaViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
-        val imageCategoria = itemView.image_view_plato
-        val txNombreCategoria = itemView.text_nombre_pletoitem
+        val imageCategoria = itemView.image_view_categoria
+        val txNombreCategoria = itemView.text_view_titulo_categoria
 
 
     }
