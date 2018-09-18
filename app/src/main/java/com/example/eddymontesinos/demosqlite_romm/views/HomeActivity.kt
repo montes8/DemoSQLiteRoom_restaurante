@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
+import com.example.eddymontesinos.demosqlite_romm.model.Categoria
 import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.repository.temporal.OrdenTemporal
@@ -45,6 +46,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun cargarRecycler(){
+        val detallesCategoria = intent.getParcelableExtra<Categoria>(CategoriaActivity.CATEGORIA_PARAM)
 
         platosAdapter = ListaPlatosAdarper(this)
 
@@ -97,7 +99,7 @@ class HomeActivity : AppCompatActivity() {
         ajusteToolbarHome()
 
         Thread {
-            val lista = DemoApplication.database!!.platoDao().litarPlatos()
+            val lista = DemoApplication.database!!.platoDao().verPlatoSegunCategoria(detallesCategoria.idCategoria!!)
             handler.post {
                 platosAdapter!!.addList(lista)
             }
