@@ -14,5 +14,7 @@ var userId : Long? = null,
 
 var fecha: String? = "",
 
+var direccion : String = "",
+
 var montoTotal : Double? = null
 )
