@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/fondo_recyclerview"
+    android:orientation="vertical"
     tools:context=".views.DetallePedidoActivity">
 
     <android.support.v7.widget.Toolbar
@@ -23,29 +22,58 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/pedido_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="380dp"
         tools:itemCount="5"
         tools:listitem="@layout/molde_detalle_pedido" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="DIRECCION DE ENGTREGA:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:hint="direccion"
+                android:textColor="#FF5722"
+                 />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total:"
-            android:layout_gravity="bottom"
-            android:textSize="20sp"/>
-        <TextView
-            android:id="@+id/text_subtotal_ordenes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Total"
-            android:layout_marginLeft="5dp"
-            android:textColor="#FF5722"
-            android:layout_gravity="bottom"
-            android:textSize="20sp"/>
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="Total:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_subtotal_ordenes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5dp"
+                android:hint="Total"
+                android:textColor="#FF5722"
+                android:textSize="20sp" />
         </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>
