@@ -16,6 +16,10 @@ class CategoriaActivity : AppCompatActivity() {
 
     var categoriaAdapter: CategoriaAdapter? = null
     var handler : Handler = Handler()
+    companion object {
+        const val CATEGORIA_PARAM = "supermercado"
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +27,11 @@ class CategoriaActivity : AppCompatActivity() {
         setSupportActionBar(CategoriaToolbar)
         title = "  CATEGORIAS"
         categoriaAdapter = CategoriaAdapter(this)
+        categoriaAdapter?.onCategoriaClick={
+            val intent = Intent(this,HomeActivity::class.java)
+            intent.putExtra(CATEGORIA_PARAM, it)
+            startActivity(intent)
+        }
         my_recyclerviewCategoria.layoutManager = LinearLayoutManager(this)
         my_recyclerviewCategoria.layoutManager=GridLayoutManager(this,2)
         my_recyclerviewCategoria.adapter = categoriaAdapter
