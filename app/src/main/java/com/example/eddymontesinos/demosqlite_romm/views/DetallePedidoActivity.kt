@@ -48,6 +48,7 @@ class DetallePedidoActivity : AppCompatActivity() {
                             pedido.userId =idUsu
                             pedido.fecha =fecha
                             pedido.montoTotal = text_subtotal_ordenes.text.toString().toDouble()
+                            pedido.direccion = edit_direccion.text.toString()
 
                             val nuevoIdPedido = DemoApplication.database!!.pedidoDao().insertPedido(pedido)
 
