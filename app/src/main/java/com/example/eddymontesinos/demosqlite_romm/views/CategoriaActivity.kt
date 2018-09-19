@@ -25,22 +25,27 @@ class CategoriaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_categoria)
         setSupportActionBar(CategoriaToolbar)
-        title = "  CATEGORIAS"
-        categoriaAdapter = CategoriaAdapter(this)
-        categoriaAdapter?.onCategoriaClick={
-            val intent = Intent(this,HomeActivity::class.java)
-            intent.putExtra(CATEGORIA_PARAM, it)
-            startActivity(intent)
-        }
-        my_recyclerviewCategoria.layoutManager = LinearLayoutManager(this)
-        my_recyclerviewCategoria.layoutManager=GridLayoutManager(this,2)
-        my_recyclerviewCategoria.adapter = categoriaAdapter
-
-        Thread{
-            val lista = DemoApplication.database!!.categoriaDao().litarSuperCategoria()
-            handler.post {
-                categoriaAdapter!!.addList(lista)
+            title = "  CATEGORIAS"
+            categoriaAdapter = CategoriaAdapter(this)
+            categoriaAdapter?.onCategoriaClick={
+                val intent = Intent(this,HomeActivity::class.java)
+                intent.putExtra(CATEGORIA_PARAM, it)
+                startActivity(intent)
             }
-        }.start()
+            my_recyclerviewCategoria.layoutManager = LinearLayoutManager(this)
+            my_recyclerviewCategoria.layoutManager=GridLayoutManager(this,2)
+            my_recyclerviewCategoria.adapter = categoriaAdapter
+
+            Thread{
+                val lista = DemoApplication.database!!.categoriaDao().litarSuperCategoria()
+                handler.post {
+                    categoriaAdapter!!.addList(lista)
+                }
+            }.start()
+
         }
+    override fun onBackPressed() {
+
+        moveTaskToBack(true)
+    }
 }

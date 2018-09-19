@@ -168,10 +168,7 @@ class HomeActivity : AppCompatActivity() {
             return true
         }
 
-    override fun onBackPressed() {
 
-        moveTaskToBack(true)
-    }
 }
 
 
