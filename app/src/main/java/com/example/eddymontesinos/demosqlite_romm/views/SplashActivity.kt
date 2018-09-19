@@ -39,7 +39,7 @@ class SplashActivity : AppCompatActivity() {
 
                     if (idUsuarioLogeado > 0){
 
-                        startActivity<HomeActivity>()
+                        startActivity<CategoriaActivity>()
                     }else{
                         val i = Intent(baseContext, LoginActivity::class.java)
                         startActivity(i)

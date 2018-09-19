@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 @Entity(foreignKeys = [ (ForeignKey(entity = Categoria::class, parentColumns = arrayOf("idCategoria"), childColumns = arrayOf("categoriaId"), onDelete = ForeignKey.CASCADE))])
-data class Plato(
+class Plato(
         @PrimaryKey(autoGenerate = true)
         var idPlato : Long? =null,
         val categoriaId : Long,

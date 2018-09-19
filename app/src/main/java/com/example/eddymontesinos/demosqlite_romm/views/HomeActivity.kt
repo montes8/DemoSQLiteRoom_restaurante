@@ -46,7 +46,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun cargarRecycler(){
-        val detallesCategoria = intent.getParcelableExtra<Categoria>(CategoriaActivity.CATEGORIA_PARAM)
+
 
         platosAdapter = ListaPlatosAdarper(this)
 
@@ -97,9 +97,9 @@ class HomeActivity : AppCompatActivity() {
         my_recyclerview.adapter = platosAdapter
 
         ajusteToolbarHome()
-
         Thread {
-            val lista = DemoApplication.database!!.platoDao().verPlatoSegunCategoria(detallesCategoria.idCategoria!!)
+            val detallesCategoria = intent.getParcelableExtra<Categoria>(CategoriaActivity.CATEGORIA_PARAM)
+            val lista = DemoApplication.database!!.platoDao().verPlatoSegunCategoria(detallesCategoria.idCategoria!!.toLong())
             handler.post {
                 platosAdapter!!.addList(lista)
             }
