@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:padding="5dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
 
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:padding="10dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
-            android:padding="10dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/image_plato_historial"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:civ_border_color="#ff5f47"
-                app:civ_border_width="2dp"
-                android:src="@drawable/huancaina"
-                />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_plato_historial"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/huancaina"
+            app:civ_border_color="#ff5f47"
+            app:civ_border_width="2dp" />
 
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_weight="3"
-                android:orientation="horizontal"
-                android:paddingLeft="12dp">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp">
 
-             <LinearLayout
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:orientation="vertical">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/nombre_plato_historial"
                     android:layout_width="wrap_content"
@@ -47,22 +47,23 @@
                     android:id="@+id/precio_plato_historial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textColor="#FF5722"
                     android:layout_marginTop="10dp"
-                    android:text="@string/precio" />
+                    android:text="@string/precio"
+                    android:textColor="#FF5722"
+                    android:textStyle="bold" />
 
-                <LinearLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:textStyle="bold"
                         android:hint="@string/cantidad"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/cantidad_platos_historial"
@@ -70,18 +71,19 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:hint="catidad"
-                        android:textStyle="bold"
                         android:textColor="#FF5722"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
                     <TextView
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
                         android:gravity="center"
                         android:hint="@string/subtotal"
-                        android:layout_marginLeft="5dp"
-                        android:textStyle="bold"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/subtotal_pagar_historial"
@@ -89,20 +91,20 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:hint="precio"
-                        android:textStyle="bold"
                         android:textColor="#FF5722"
-                        android:textSize="10sp" />
-                </LinearLayout>
-             </LinearLayout>
-                <TextView
-                    android:id="@+id/fecha_pedido_historial"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="fecha"
-                    android:ems="5"
-                    />
-            </LinearLayout>
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/fecha_pedido_historial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="5"
+                android:text="fecha" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-        </LinearLayout>
-</LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,7 +1,7 @@
 package com.example.eddymontesinos.demosqlite_romm.repository.database
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.RoomDatabase
+import androidx.room.Database
+import androidx.room.RoomDatabase
 import com.example.eddymontesinos.demosqlite_romm.model.*
 import com.example.eddymontesinos.demosqlite_romm.repository.database.dao.*
 

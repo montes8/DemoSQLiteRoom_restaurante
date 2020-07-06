@@ -1,10 +1,10 @@
 package com.example.eddymontesinos.demosqlite_romm.views
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.appcompat.app.AppCompatActivity
 import com.example.eddymontesinos.demosqlite_romm.R
 import kotlinx.android.synthetic.main.activity_splash.*
 import org.jetbrains.anko.defaultSharedPreferences

@@ -1,59 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="5dp"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_style"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/pedido"
             android:textColor="#FF5722"
-            android:textStyle="bold"
-            android:text="@string/pedido"/>
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/id_pedido"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="id"/>
+            android:text="id"
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/total"
             android:textColor="#FF5722"
-            android:textStyle="bold"
-            android:text="@string/total"/>
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/total_pagar_pedido"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="@string/total"/>
+            android:text="@string/total"
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/fecha"
             android:textColor="#FF5722"
-            android:textStyle="bold"
-            android:text="@string/fecha"/>
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/fecha_pedido"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="@string/fecha"/>
+            android:text="@string/fecha"
+            android:textStyle="bold" />
 
 
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

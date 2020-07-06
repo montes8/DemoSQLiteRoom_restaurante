@@ -1,6 +1,6 @@
 package com.example.eddymontesinos.demosqlite_romm.repository.database.dao
 
-import android.arch.persistence.room.*
+import androidx.room.*
 import com.example.eddymontesinos.demosqlite_romm.model.Usuario
 
 @Dao

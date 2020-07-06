@@ -2,7 +2,7 @@ package com.example.eddymontesinos.demosqlite_romm.utils
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 
 
 object DemoUtils {
