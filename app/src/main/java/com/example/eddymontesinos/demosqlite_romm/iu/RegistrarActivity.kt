@@ -1,4 +1,4 @@
-package com.example.eddymontesinos.demosqlite_romm.views
+package com.example.eddymontesinos.demosqlite_romm.iu
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

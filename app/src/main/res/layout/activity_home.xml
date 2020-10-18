@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:id="@+id/home_layout"
     android:orientation="vertical"
-    tools:context=".views.HomeActivity">
+    tools:context=".iu.HomeActivity">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/homeToolbar"
