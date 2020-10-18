@@ -28,19 +28,44 @@ androidExtensions {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 
-    implementation 'com.android.support:design:27.1.1'
-    implementation 'com.android.support:support-v4:27.1.1'
+    implementation presentationDependencies.kotlin
+    implementation presentationDependencies.core
+    implementation presentationDependencies.koin
+    implementation presentationDependencies.appcompat
+    implementation presentationDependencies.appcompatSupport
+    implementation presentationDependencies.recyclerView
+    implementation presentationDependencies.constraint
+    implementation presentationDependencies.viewModelExtensions
+    implementation presentationDependencies.viewModel
+    implementation presentationDependencies.viewModelkoin
+    implementation presentationDependencies.materialDesign
+    implementation presentationDependencies.core
+    implementation presentationDependencies.avi
+    implementation presentationDependencies.design
+    implementation presentationDependencies.gson
+    implementation presentationDependencies.exifinterface
+    implementation presentationDependencies.glide
+    implementation presentationDependencies.corePlay
+    implementation presentationDependencies.exifinterface
+    implementation presentationDependencies.rootbeer
+
+    //Network
+    implementation repositoryDependencies.retrofit
+    implementation repositoryDependencies.retrofitGson
+
+
+//Coroutines
+    implementation presentationDependencies.coroutinesAndroid
+    implementation presentationDependencies.coroutines
+
 
     implementation 'de.hdodenhof:circleimageview:2.2.0'
 
     //anko
     implementation 'org.jetbrains.anko:anko:0.10.1'
-    //Recyclerview
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
+
+
     //Romm
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     implementation 'android.arch.persistence.room:rxjava2:1.1.1'
