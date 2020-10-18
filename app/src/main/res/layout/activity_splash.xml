@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/fondosplashs"
-    tools:context=".views.SplashActivity">
+    tools:context=".iu.SplashActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/once"

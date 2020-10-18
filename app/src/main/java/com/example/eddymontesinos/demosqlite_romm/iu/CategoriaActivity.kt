@@ -1,4 +1,4 @@
-package com.example.eddymontesinos.demosqlite_romm.views
+package com.example.eddymontesinos.demosqlite_romm.iu
 
 import android.content.Intent
 
@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.CategoriaAdapter
-import com.example.eddymontesinos.demosqlite_romm.adapter.ListaPlatosAdarper
 import kotlinx.android.synthetic.main.activity_categoria.*
 
 class CategoriaActivity : AppCompatActivity() {

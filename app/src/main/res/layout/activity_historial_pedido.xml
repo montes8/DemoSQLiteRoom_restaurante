@@ -24,4 +24,4 @@
         android:background="@drawable/fondo_recyclerview"
         tools:listitem="@layout/molde_historial_pedido" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>

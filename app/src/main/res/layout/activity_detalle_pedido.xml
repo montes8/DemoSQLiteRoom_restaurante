@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo_recyclerview"
     android:orientation="vertical"
-    tools:context=".views.DetallePedidoActivity">
+    tools:context=".iu.DetallePedidoActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/pedidoToolbar"

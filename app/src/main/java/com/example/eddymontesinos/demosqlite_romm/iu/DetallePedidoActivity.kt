@@ -1,4 +1,4 @@
-package com.example.eddymontesinos.demosqlite_romm.views
+package com.example.eddymontesinos.demosqlite_romm.iu
 
 
 
@@ -14,14 +14,12 @@ import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.DetalleAdapter
 import com.example.eddymontesinos.demosqlite_romm.model.DetallePedido
-import com.example.eddymontesinos.demosqlite_romm.model.DetalleTemporal
 import com.example.eddymontesinos.demosqlite_romm.model.Pedido
 import com.example.eddymontesinos.demosqlite_romm.repository.temporal.OrdenTemporal
 import kotlinx.android.synthetic.main.activity_detalle_pedido.*
 import org.jetbrains.anko.defaultSharedPreferences
 import org.jetbrains.anko.toast
 import java.util.*
-import kotlin.collections.ArrayList
 
 class DetallePedidoActivity : AppCompatActivity() {
 
