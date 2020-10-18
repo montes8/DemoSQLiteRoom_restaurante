@@ -1,18 +1,19 @@
 package com.example.eddymontesinos.demosqlite_romm.iu
 
-import android.content.Intent
-
 import android.os.Bundle
 import android.os.Handler
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.eddymontesinos.demosqlite_romm.DemoApplication
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.adapter.CategoriaAdapter
+import com.example.eddymontesinos.demosqlite_romm.model.Categoria
+import com.example.eddymontesinos.demosqlite_romm.repository.network.DemoService
 import kotlinx.android.synthetic.main.activity_categoria.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CategoriaActivity : AppCompatActivity() {
 
@@ -30,20 +31,38 @@ class CategoriaActivity : AppCompatActivity() {
             title = "  CATEGORIAS"
             categoriaAdapter = CategoriaAdapter(this)
             categoriaAdapter?.onCategoriaClick={
-                val intent = Intent(this,HomeActivity::class.java)
+               /* val intent = Intent(this,HomeActivity::class.java)
                 intent.putExtra(CATEGORIA_PARAM, it)
-                startActivity(intent)
+                startActivity(intent)*/
             }
             my_recyclerviewCategoria.layoutManager = LinearLayoutManager(this)
             my_recyclerviewCategoria.layoutManager= GridLayoutManager(this,2)
             my_recyclerviewCategoria.adapter = categoriaAdapter
+            val listaCallback = DemoService.create().getData()
+            listaCallback.enqueue(object : Callback<ArrayList<Categoria>> {
+                override fun onResponse(call: Call<ArrayList<Categoria>>?, response: Response<ArrayList<Categoria>>?) {
+                    if (response?.code() == 200) {
+                        val listaproducto = response.body()
+                        if (listaproducto != null) {
+                            categoriaAdapter?.addList(listaproducto)
+                        }
+                    }else{
+                        Toast.makeText(this@CategoriaActivity, "Ocurrio un error al obtener la lista (${response?.code()})", Toast.LENGTH_SHORT).show()
+                    }
+                }
 
-            Thread{
+                override fun onFailure(call: Call<ArrayList<Categoria>>?, t: Throwable?) {
+
+                    Toast.makeText(this@CategoriaActivity, "Ocurrio un error al obtener la lista", Toast.LENGTH_SHORT).show()
+                }
+            })
+
+         /*   Thread{
                 val lista = DemoApplication.database!!.categoriaDao().litarSuperCategoria()
                 handler.post {
                     categoriaAdapter!!.addList(lista)
                 }
-            }.start()
+            }.start()*/
 
         }
     override fun onBackPressed() {

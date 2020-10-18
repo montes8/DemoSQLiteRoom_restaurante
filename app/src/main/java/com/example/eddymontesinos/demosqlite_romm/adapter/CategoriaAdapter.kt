@@ -7,14 +7,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eddymontesinos.demosqlite_romm.R
 import com.example.eddymontesinos.demosqlite_romm.model.Categoria
-import com.example.eddymontesinos.demosqlite_romm.model.Plato
 import com.example.eddymontesinos.demosqlite_romm.utils.DemoUtils
-import kotlinx.android.synthetic.main.item_molde_platos.view.*
 import kotlinx.android.synthetic.main.molde_categoria.view.*
 
 class CategoriaAdapter (val contexto: Context, var onCategoriaClick: ((Categoria) -> Unit)? = null) : RecyclerView.Adapter<CategoriaAdapter.CategoriaViewHolder>(){
 
-    private var categorias : List<Categoria>? = null
+    private var categorias : List<Categoria> = ArrayList()
 
     fun addList(categorias : List<Categoria>){
         this.categorias = categorias
@@ -34,7 +32,7 @@ class CategoriaAdapter (val contexto: Context, var onCategoriaClick: ((Categoria
 
 
     override fun onBindViewHolder(holder: CategoriaViewHolder, position: Int) {
-        val categoria = categorias!![position]
+        val categoria = categorias[position]
 
 
         holder.imageCategoria.setImageDrawable(DemoUtils.getImage(contexto, categoria.fotoCategoria))

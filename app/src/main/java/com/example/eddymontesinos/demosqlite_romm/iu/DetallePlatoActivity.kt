@@ -20,7 +20,7 @@ class DetallePlatoActivity : AppCompatActivity() {
         val detallesPlatos = intent.getParcelableExtra<Plato>(PLATO_PARAM)
 
         setSupportActionBar(detalleToolbar)
-        title = detallesPlatos.nombrePlato
+        title = detallesPlatos?.nombrePlato
         detalleToolbar.navigationIcon = getDrawable(R.drawable.ic_atras)
         detalleToolbar.setNavigationOnClickListener {
             onBackPressed()
@@ -28,11 +28,11 @@ class DetallePlatoActivity : AppCompatActivity() {
 
 
 
-        image_plato.setImageDrawable(DemoUtils.getImage(this,detallesPlatos.imagen))
-        text_precio_detalle.setText("$ "+detallesPlatos.precioPlato.toString() )
-        text_calorias.setText(detallesPlatos.calorias)
-        text_descuento.setText(detallesPlatos.descuento.toString()+"%")
-        text_descripcion.setText(detallesPlatos.descripcion)
+        image_plato.setImageDrawable(DemoUtils.getImage(this,detallesPlatos?.imagen?:""))
+        text_precio_detalle.setText("$ "+detallesPlatos?.precioPlato.toString() )
+        text_calorias.setText(detallesPlatos?.calorias)
+        text_descuento.setText(detallesPlatos?.descuento.toString()+"%")
+        text_descripcion.setText(detallesPlatos?.descripcion)
 
 
 

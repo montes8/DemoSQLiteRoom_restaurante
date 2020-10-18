@@ -99,7 +99,7 @@ class HomeActivity : AppCompatActivity() {
         ajusteToolbarHome()
         Thread {
             val detallesCategoria = intent.getParcelableExtra<Categoria>(CategoriaActivity.CATEGORIA_PARAM)
-            val lista = DemoApplication.database!!.platoDao().verPlatoSegunCategoria(detallesCategoria.idCategoria!!.toLong())
+            val lista = DemoApplication.database!!.platoDao().verPlatoSegunCategoria(detallesCategoria?.idCategoria?.toLong()?:0L)
             handler.post {
                 platosAdapter!!.addList(lista)
             }

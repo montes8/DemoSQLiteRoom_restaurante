@@ -16,21 +16,17 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
-        val anima : Animation
-        val anima2 : Animation
-
-        anima = AnimationUtils.loadAnimation(this, R.anim.animacion)
-        anima2 = AnimationUtils.loadAnimation(this, R.anim.animacion_botton)
-        once.animation=anima
-        doce.animation=anima2
+        val ani = AnimationUtils.loadAnimation(this, R.anim.animacion)
+        val ani2 = AnimationUtils.loadAnimation(this, R.anim.animacion_botton)
+        once.animation=ani
+        doce.animation=ani2
 
 
         llamarSplash()
     }
 
 
-    fun llamarSplash (){
+    private fun llamarSplash (){
         val background = object : Thread() {
             override fun run() {
                 try {
